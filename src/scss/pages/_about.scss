@@ -1,0 +1,142 @@
+.about {
+    
+    .main {
+        width: 1040px;
+    }
+
+    .bio,
+    .image {
+        display: inline-block;
+        margin-bottom: 1em;
+        text-align: left;
+        vertical-align: top;
+        width: 45%;
+    }
+
+    .row {
+        text-align: center;
+        vertical-align: top;
+    }
+
+    .cv-block {
+        text-align: left;
+        display: inline-block;
+        width: 45%;
+        vertical-align: top;
+    }
+
+    .image {
+        z-index: -100;
+    }
+
+    .bio {
+        box-sizing: border-box;
+        font-size: 2.1em;
+        font-weight: bold;
+        height: 310px;
+        line-height: 1.5;
+
+        p {
+            margin-top: 2.7em;
+            margin-bottom: 2.7em;
+            padding-right: 2em;
+        }
+    }
+
+    .image img {
+        height: auto;
+        max-width: 100%;
+    }
+
+    .cv {
+        margin-bottom: 5em;
+
+        h3,
+        p {
+            font-size: 1.3em;
+        }
+
+        h3 {
+            margin-top: 2.4em;
+        }
+
+        p {
+            line-height: 1;
+        }
+
+        i {
+            font-style: normal;
+        }
+    }
+
+    .cv-section-title {
+        font-size: 2.7em;
+        font-weight: 400;
+        margin-top: 4em;
+        margin-bottom: 0
+    }
+    .cv-section-title::after {
+        content: " —";
+    }
+
+}
+
+@media screen and (max-width: 1025px) {
+    .about {
+
+        .bio {
+            height: inherit;
+            font-size: 1.8vw;
+
+            p {
+                padding-left: 5vw;
+                padding-right: 5vw;
+            }
+        }
+
+        .image {
+            margin-bottom: 0;
+        }
+
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .about {
+
+        .bio {
+            // font-size: 1.8vw;
+        }
+    }
+}
+
+@media screen and (max-width: 420px) {
+    .about {
+
+        .bio,
+        .image,
+        .cv-block {
+            display: block;
+            width: 100%;
+        }
+
+        .bio {
+            padding-right: 0;
+            font-size: 4.5vw;
+
+            p {
+                
+            }
+        }
+
+        .cv-section-title {
+            padding-left: 1.5rem;
+            margin-top: 2.5em;
+        }
+
+        .cv-section-title::after {
+        content: none;
+        }
+
+    }
+}

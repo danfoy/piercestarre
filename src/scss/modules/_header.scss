@@ -1,0 +1,200 @@
+.site-header {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 125;
+
+    a {
+        text-decoration: none;
+    }
+
+    a:hover {
+        color: #3a3a3a;
+    }
+
+    .headerwrapper {
+        max-width: 100%;
+    }
+
+    .site-nav {
+        display: inline-block;
+    }
+
+    .menubutton {
+        cursor: pointer;
+        display: none;
+        font-size: 2.8em;
+        margin: 0.3em;
+        padding: 3px;
+    }
+
+    .site-title {
+        font-weight: 400;
+        margin: 3.2rem 0 1.8rem 0;
+        text-transform: uppercase;
+        font-size: 5.6em;
+        
+
+        a:hover {
+            // Override hover effects on title
+            color: inherit;
+        }
+    }
+
+
+    .site-nav {
+        
+        ul {
+            display: inline-block;
+            list-style-type: none;
+            padding: 0 0 3rem 0;
+            text-transform: lowercase;
+        }
+
+        li {
+            display: inline-block;
+            font-size: 1.3em;
+            padding: 0 1em;
+        }  
+    }
+}
+
+
+
+.site-header.sticky {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+    animation-name: dropdown;
+    background: #b0001b;
+    position: fixed;
+    text-align: left;
+
+    .menubutton {
+        margin-top: 0.1em;
+    }
+
+    .headerwrapper {
+        margin: 0 auto;
+        padding: 0.7em 0;
+        width: 1000px;
+    }
+
+    .site-title {
+        display: inline-block;
+        margin: 0 0 0 0.5em;
+        font-size: 2em;
+    }
+
+    .site-nav {
+        float: right;
+        line-height: 1em;
+    }
+
+    .site-nav ul {
+        margin-top: 0.5em;
+        padding-bottom: 0;
+    }
+}
+
+
+
+.site-header.dropdownactive {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    background: #b0001b;
+
+    .menubutton {
+        color: #3a3a3a;
+    }
+
+    .site-nav ul {
+        display: block;
+        position: fixed;
+        left: 0;
+        float: none;
+        width: 100%;
+        text-align: center;
+        margin-top: 1em;
+    }
+
+    .site-nav li {
+        display: block;
+    }
+
+    .site-nav li a {
+        display: inline-block;
+        font-size: 2em;
+        padding: 0.5em;
+        margin: 0.5em 0;
+    }
+}
+
+
+
+.site-header.buttonized {
+
+    ul {
+        display: none
+    }
+
+    .menubutton {
+        display: inline-block;
+    }
+}
+
+
+
+.site-header.sticky.dropdownactive {
+    animation-name: none;
+}
+
+
+
+
+
+// Hide the site nav if JS is enabled. We will re-enable this later
+// in animatemenu.js - this prevents a FOUC while the script decides
+// whether or not it will render the hamburger menu.
+.js .site-header .site-nav {
+    visibility: hidden;
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+    
+    .main {
+        margin-top : 52vw;
+    }
+
+    .site-header {
+        
+        .site-title {
+           margin: 12vw 0 5vw 0;
+           font-size: 10vw;
+        }
+
+        .menubutton {
+            font-size: 8vw;
+        }
+    
+    }
+}
+
+
+
+
+
+
+@keyframes dropdown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100px, 0);
+    }
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}

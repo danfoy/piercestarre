@@ -1,0 +1,27 @@
+.single-work .main {
+    width: 930px;
+}
+
+.project-title {
+    font-style: italic;
+    margin: 2.5em auto;
+}
+
+.project-location,
+.project-date {
+    margin: 0 auto;
+    font-size: 1.3em;
+    line-height: 1.6;
+}
+
+.project-description {
+    margin-bottom: 5em;
+    margin-top: 5em;
+}
+
+
+@media screen and (max-width: 630px) {
+    .project-description {
+        text-align: left;
+    }
+}

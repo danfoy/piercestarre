@@ -1,0 +1,24 @@
+.home {
+    
+    .main {
+	    width: 600px;
+    	
+    	p {
+        text-align: left;
+    	}
+
+    }
+
+    img {
+        height: auto;
+        max-width: 100%;
+    }
+    
+}
+
+@media screen and (min-width: 420px) {
+	.home .main p {
+        padding-left: 0;
+        padding-right: 0;
+	}
+}

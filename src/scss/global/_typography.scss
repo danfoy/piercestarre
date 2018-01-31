@@ -1,0 +1,32 @@
+body {
+	color: #fff;
+    font-family: 'Open Sans', sans-serif;
+}
+
+a {
+    color: #fff;
+    text-decoration: underline
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+
+p {
+    font-size: 1.3em;
+    line-height: 1.6;
+}
+
+
+@media screen and (max-width: 1040px) {
+    
+    .main h1,
+    .main h2,
+    .main h3,
+    .main h4,
+    p {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+    }
+}

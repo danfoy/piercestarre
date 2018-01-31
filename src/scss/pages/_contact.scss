@@ -1,0 +1,37 @@
+.contact {
+    
+    .main {
+    }
+
+    .socialmedialinks {
+        font-size: 2em;
+        list-style-type: none;
+        margin-top: 3em;
+        padding: 0;
+    }
+
+    .socialmedialinks li {
+        display: inline-block;
+        margin: 0 0.2em;
+        padding: 0;
+    }
+
+    .socialmedialinks a {
+        background: #fff;
+        border-radius: 100%;
+        color: #b0001b;
+        padding: 0 0.15em 0.17em 0.16em;
+        text-decoration: none;
+    }
+
+    .socialmedialinks a:hover {
+        background: #b0001b;
+        color: #fff;
+    }
+
+    .socialmedialinks .symbol {
+        display: inline-block;
+        width: 1.3em;
+    }
+
+}

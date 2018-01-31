@@ -1,0 +1,25 @@
+/*!
+	Theme Name: Pierce Starre 2017
+	Theme URI: http://www.piercestarre.com
+	Description: Theme for Pierce Starre's website
+	Version: 0.1
+	Author: Dan Foy
+	Author URI: http://www.danfoy.com
+*/
+
+
+@import 'vendor/normalize';
+@import 'vendor/wordpress';
+@import 'vendor/socialicons';
+
+@import 'global/structure';
+@import 'global/typography';
+
+@import 'modules/header';
+@import 'modules/footer';
+
+@import 'pages/homepage';
+@import 'pages/about';
+@import 'pages/contact';
+@import 'pages/project-archive';
+@import 'pages/project-single';

@@ -1,0 +1,3 @@
+[submodule "Chassis"]
+        path = vagrant
+        url = https://github.com/Chassis/Chassis.git

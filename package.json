@@ -1,0 +1,29 @@
+{
+  "name": "piercestarre2017",
+  "version": "1.0.0",
+  "description": "WordPress theme for Pierce Starre's website",
+  "main": "README.md",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Dan Foy",
+  "license": "SEE LICENSE IN LICENSE.md",
+  "devDependencies": {
+    "autoprefixer": "^7.2.4",
+    "browser-sync": "^2.23.3",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-newer": "^1.4.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-sass": "^3.1.0",
+    "gulp-util": "^3.0.8"
+  },
+  "dependencies": {
+    "readable-stream": "^2.3.3",
+    "vinyl-fs": "^3.0.1"
+  },
+  "scripts": {
+    "startdev": "cd vagrant && vagrant up && cd ../ && gulp watch",
+    "halt": "cd vagrant && vagrant halt && cd ../"
+  }
+}

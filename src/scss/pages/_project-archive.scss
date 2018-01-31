@@ -1,0 +1,87 @@
+.post-type-archive-work {
+    .main {
+        text-align: center;
+    }
+    .project-archive-grid {
+        list-style-type: none;
+        margin: 20px auto;
+        padding: 0;
+        text-align: left;
+        width: 660px;
+        font-size: 0;
+    }
+
+    .project-archive-item {
+        display: inline-block;
+        margin: 20px;
+        padding: 0;
+    }
+
+    img {
+        height: 180px;
+        width: 180px;
+        -webkit-filter: brightness(100%);
+        filter: brightness(100%);
+        transition: all 0.5s;
+    }
+
+    img:hover {
+        -webkit-filter: brightness(70%);
+        filter: brightness(70%);
+        transition: all 0.5s;
+    }
+}
+
+// Breakpoint at 3-column archive grid
+@media all and (max-width: 660px) {
+    .post-type-archive-work {
+        
+        // Reduce to 2 columns
+        .project-archive-grid {
+            width: 440px;
+        }
+    
+    }
+}
+
+// Breakpoint at 2-column archive grid
+@media all and (max-width: 420px) {
+    .post-type-archive-work {
+
+        // Reduce margins
+        .project-archive-item {
+            margin: 10px;
+        }
+
+        // Adjust grid width to new margins
+        .project-archive-grid {
+            width: 400px;
+        }
+
+    }
+}
+
+// Breakpoint at 2-column archive grid w/ 10px margins
+@media all and (max-width: 400px) {
+    .post-type-archive-work {
+
+        // Stretch grid to 100% width
+        .project-archive-grid {
+            width: 100%;
+            margin: 0;
+        }
+
+        // Force cells to be 50% width
+        // 
+        // Will cause some upscaling on 4.7" screens
+        // However phones of this age should have decent
+        // upscaling filters so this is an acceptable compromise.
+        .project-archive-item,
+        img {
+            width: 50vw;
+            height: 50vw;
+            margin: 0;
+        }
+
+    }
+}
