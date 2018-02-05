@@ -4,7 +4,8 @@
   "description": "WordPress theme for Pierce Starre's website",
   "main": "README.md",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start-dev": "cd vagrant && vagrant up && cd ../ && gulp watch",
+    "halt": "cd vagrant && vagrant halt && cd ../"
   },
   "author": "Dan Foy",
   "license": "SEE LICENSE IN LICENSE.md",
@@ -12,6 +13,7 @@
     "autoprefixer": "^7.2.4",
     "browser-sync": "^2.23.3",
     "gulp": "^3.9.1",
+    "gulp-clean": "^0.4.0",
     "gulp-concat": "^2.6.1",
     "gulp-newer": "^1.4.0",
     "gulp-postcss": "^7.0.1",
@@ -21,9 +23,5 @@
   "dependencies": {
     "readable-stream": "^2.3.3",
     "vinyl-fs": "^3.0.1"
-  },
-  "scripts": {
-    "start-dev": "cd vagrant && vagrant up && cd ../ && gulp watch",
-    "halt": "cd vagrant && vagrant halt && cd ../"
   }
 }
