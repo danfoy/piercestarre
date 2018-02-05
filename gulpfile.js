@@ -105,6 +105,13 @@ gulp.task('img', () => {
     .pipe(gulp.dest(img.build));
 });
 
+// copy screenshot
+gulp.task('screenshot', () => {
+    return gulp.src(dir.src + 'screenshot.png')
+    .pipe(newer(dir.build))
+    .pipe(gulp.dest(dir.build));
+});
+
 // CSS processing
 gulp.task('css', () => {
     return gulp.src(css.src)
@@ -144,4 +151,12 @@ gulp.task('watch', ['browsersync'], () => {
 
 
 // Default Task
-gulp.task('default', ['php', 'js', 'css', 'fonts', 'img']);
+gulp.task('default', [
+    'php', 
+    'js', 
+    'css', 
+    'fonts', 
+    'img', 
+    'screenshot'
+    ]
+);
