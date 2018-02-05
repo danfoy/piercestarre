@@ -34,6 +34,18 @@ const js = {
     build: dir.build + 'js/'
 };
 
+// Font Settings
+const fonts = {
+    src: dir.src + 'fonts/*.*',
+    build: dir.build + 'fonts/'
+}
+
+// Image settings
+const img = {
+    src: dir.src + 'img',
+    build: dir.build + 'img'
+}
+
 // CSS settings
 var css = {
     src: dir.src + 'scss/style.scss',
@@ -79,6 +91,20 @@ gulp.task('js', () => {
     .pipe(gulp.dest(js.build));
 });
 
+// copy font files
+gulp.task('fonts', () => {
+    return gulp.src(fonts.src)
+    .pipe(newer(fonts.build))
+    .pipe(gulp.dest(fonts.build));
+});
+
+// copy images
+gulp.task('img', () => {
+    return gulp.src(img.src)
+    .pipe(newer(img.build))
+    .pipe(gulp.dest(img.build));
+});
+
 // CSS processing
 gulp.task('css', () => {
     return gulp.src(css.src)
@@ -118,4 +144,4 @@ gulp.task('watch', ['browsersync'], () => {
 
 
 // Default Task
-gulp.task('default', ['php', 'js', 'css']);
+gulp.task('default', ['php', 'js', 'css', 'fonts', 'img']);
