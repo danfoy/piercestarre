@@ -28,8 +28,6 @@ PictureSlider.prototype.beginTracking = function () {
             // Target is landscape tablets and
             // computers  up to 15" mbp
             
-            this.moveTarget.style.position = "absolute";
-            
             this.moveTarget.style.right = ((scrollPosition * 4) + 'px');
             this.moveTarget.style.top = ((scrollPosition * 2) + 'px');
             
@@ -45,8 +43,6 @@ PictureSlider.prototype.beginTracking = function () {
             // Targets computers larger than 15" mbp,
             // TVs and consoles etc., but not larger
             // than 1080p to avoid scrolling issues
-            
-            this.moveTarget.style.position = "absolute";
 
             this.moveTarget.style.right = ((scrollPosition * 6) + 'px');
             this.moveTarget.style.top = ((scrollPosition * 2) + 'px');
