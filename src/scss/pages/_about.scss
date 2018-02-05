@@ -4,6 +4,23 @@
         width: 1040px;
     }
 
+    .sectionheader {
+        position: relative;
+        text-align: left;
+        padding-left: 5%;
+    }
+
+    .bio {
+        position: relative;
+        left: 0;
+    }
+
+    .image {
+        display: absolute;
+        right: 0;
+        margin-right: 5%;
+    }
+
     .bio,
     .image {
         display: inline-block;
@@ -31,7 +48,7 @@
 
     .bio {
         box-sizing: border-box;
-        font-size: 2.1em;
+        font-size: 2em;
         font-weight: bold;
         height: 310px;
         line-height: 1.5;
@@ -81,12 +98,12 @@
 
 }
 
-@media screen and (max-width: 1025px) {
+@media screen and (max-width: 1040px) {
     .about {
 
         .bio {
             height: inherit;
-            font-size: 1.8vw;
+            font-size: 1.6vw;
 
             p {
                 padding-left: 5vw;
@@ -113,6 +130,10 @@
 @media screen and (max-width: 420px) {
     .about {
 
+        .sectionheader {
+            padding-left: 0;
+        }
+
         .bio,
         .image,
         .cv-block {
@@ -120,13 +141,14 @@
             width: 100%;
         }
 
+        .image {
+            position: relative;
+        }
+
         .bio {
             padding-right: 0;
             font-size: 4.5vw;
 
-            p {
-                
-            }
         }
 
         .cv-section-title {
