@@ -4,7 +4,7 @@
 // Gulp and plugins
 const
     gulp = require('gulp'),
-    util = require('gulp-util'),
+    noop = require('gulp-noop'),
     newer = require('gulp-newer'),
     sass = require('gulp-sass'),
     postcss = require('gulp-postcss'),
@@ -87,7 +87,7 @@ gulp.task('css', () => {
     .pipe(gulp.dest(css.build))
     .pipe(browsersync
         ? browsersync.reload({ stream: true }) 
-        : util.noop()
+        : noop()
     );
 });
 
