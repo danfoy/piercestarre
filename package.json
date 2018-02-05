@@ -23,7 +23,7 @@
     "vinyl-fs": "^3.0.1"
   },
   "scripts": {
-    "startdev": "cd vagrant && vagrant up && cd ../ && gulp watch",
+    "start-dev": "cd vagrant && vagrant up && cd ../ && gulp watch",
     "halt": "cd vagrant && vagrant halt && cd ../"
   }
 }
