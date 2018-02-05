@@ -8,7 +8,8 @@ const
     newer = require('gulp-newer'),
     sass = require('gulp-sass'),
     postcss = require('gulp-postcss'),
-    concat = require('gulp-concat')
+    concat = require('gulp-concat'),
+    clean = require('gulp-clean')
 ;
 
 // Browser-sync
@@ -133,7 +134,11 @@ gulp.task('browsersync', () => {
     }
 });
 
-
+// Purge files from /dist
+gulp.task('purge', () => {
+    return gulp.src(dir.build, {read: false})
+    .pipe(clean());
+});
 
 // watch for file changes
 gulp.task('watch', ['browsersync'], () => {
