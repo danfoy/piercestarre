@@ -11,7 +11,7 @@
 
     /**
      * Recursively loop through each element and add the `animate` class
-     * after 1-second delay.
+     * after specified delay.
      * @param {HTMLCollecton} target HTMLCollection of target elements
      * @param {number} index  Index of current element in HTMLCollection
      */
@@ -21,7 +21,7 @@
             if ( index + 1 < target.length ) {
                 addClass(target, index + 1);
             }
-        }, 1000);
+        }, 500);
     }
 
     /** Start adding classes */
