@@ -10,7 +10,7 @@ get_header(); ?>
             the_post();
             ?>
 
-        <div class="sectionheader">
+        <div class="sectionheader row">
             <div class="bio">
                 <?php the_content(); ?>
             </div>
