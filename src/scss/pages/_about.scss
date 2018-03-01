@@ -4,65 +4,49 @@
         width: 1040px;
     }
 
-    .sectionheader {
-        position: relative;
-        text-align: left;
-        padding-left: 5%;
-    }
-
-    .bio {
-        position: relative;
-        left: 0;
-    }
-
-    .image {
-        margin-right: 5%;
-        text-align: right;
-    }
-
-    .bio,
-    .image {
-        display: inline-block;
-        margin-bottom: 1em;
-        text-align: left;
-        vertical-align: top;
-        width: 45%;
-    }
-
-    .row {
-        text-align: center;
-        vertical-align: top;
-    }
-
     .cv-block {
         text-align: left;
+        box-sizing: border-box;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
         display: inline-block;
-        width: 45%;
+        width: 49%;
         vertical-align: top;
-    }
 
-    .image {
-        z-index: -100;
+        // Set custom block-level padding to override
+        // generic settings in global.scss
+        p,
+        h1,
+        h2,
+        h3,
+        h4 {
+            padding-left: inherit;
+            padding-right: inherit;
+        }
     }
 
     .bio {
         box-sizing: border-box;
-        font-size: 2em;
+        font-size: 2.15em;
         font-weight: bold;
-        height: 310px;
         line-height: 1.5;
-
+        
         p {
-            margin-top: 2.7em;
-            margin-bottom: 2.7em;
+            margin-top: 2.6em;
             padding-right: 2em;
         }
     }
 
-    .image img {
-        height: auto;
-        max-width: 100%;
+    .image {
+        text-align: right;
+        padding-left: 1em;
+
+        img {
+            height: auto;
+            max-width: 100%;
+        }
     }
+   
 
     .cv {
         margin-bottom: 5em;
@@ -98,36 +82,72 @@
 
 }
 
+
 @media screen and (max-width: 1040px) {
     .about {
 
         .bio {
-            height: inherit;
-            font-size: 1.6vw;
+            font-size: 2vw;
+        }
 
-            p {
-                padding-left: 5vw;
-                padding-right: 5vw;
-            }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .about {
+
+        .bio,
+        .image {
+            display: block;
+            width: 100%;
+        }
+
+        .bio {
+            font-size: 3vw
         }
 
         .image {
-            margin-bottom: 0;
-        }
+            padding-left: 0;
+            padding-right: 0;
 
+            img {
+                width: 100%;
+                height: auto;
+            }
+        }
+    
     }
 }
 
-@media screen and (max-width: 800px) {
+
+
+@media screen and (max-width: 425px) {
     .about {
 
-        .bio {
-            // font-size: 1.8vw;
+        .cv-block {
+            display: block;
+            width: 100%;
         }
+
+        .cv-section-title {
+            margin-top: 3em;
+        }
+
+        .cv-section-title::after {
+        content: none;
+        }
+
+        .bio {
+            font-size: 4.2vw;
+
+        }
+
     }
 }
 
-@media screen and (min-width: 420px) {
+
+
+@media screen and (min-width: 425px) {
 
     @keyframes animateabout {
         from {
@@ -152,41 +172,5 @@
             animation-name: animateabout;
             animation-fill-mode: forwards;
         }
-    }
-}
-
-@media screen and (max-width: 420px) {
-    .about {
-
-        .sectionheader {
-            padding-left: 0;
-        }
-
-        .bio,
-        .image,
-        .cv-block {
-            display: block;
-            width: 100%;
-        }
-
-        .image {
-            position: relative;
-        }
-
-        .bio {
-            padding-right: 0;
-            font-size: 4.5vw;
-
-        }
-
-        .cv-section-title {
-            padding-left: 1.5rem;
-            margin-top: 2.5em;
-        }
-
-        .cv-section-title::after {
-        content: none;
-        }
-
     }
 }

@@ -11,10 +11,10 @@ get_header(); ?>
             ?>
 
         <div class="sectionheader row">
-            <div class="bio">
+            <div class="bio cv-block">
                 <?php the_content(); ?>
             </div>
-            <div class="image">
+            <div class="image cv-block">
                 <?php the_post_thumbnail('large'); ?>
             </div>
         </div>
