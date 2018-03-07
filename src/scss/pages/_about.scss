@@ -6,7 +6,7 @@
 
     .sectionheader {
         // Align with other pages
-        padding-top: 20px;
+        margin-top: 20px;
     }
 
     .cv-block {
@@ -107,7 +107,11 @@
         }
 
         .bio {
-            font-size: 3vw
+            font-size: 3vw;
+
+            p {
+                margin-top: 0;
+            }
         }
 
         .image {
