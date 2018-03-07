@@ -49,7 +49,7 @@ database:
     name: wordpress
     user: wordpress
     password: vagrantpassword
-    prefix: wp_
+    prefix: wpch_
 
 # Admin configuration
 # (When overriding, include all values)
