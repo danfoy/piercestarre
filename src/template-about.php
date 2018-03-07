@@ -18,6 +18,9 @@ get_header(); ?>
                 <?php the_post_thumbnail('large'); ?>
             </div>
         </div>
+        <?php
+        endwhile;
+    endif; ?>
 
         <div class="cv">
             
@@ -34,32 +37,23 @@ get_header(); ?>
                         ) 
                     );
 
-                    if ($query_education->have_posts()) :
-                        $ps2017_current_year = 10000 
-                        ?>
+                    if ($query_education->have_posts()) : ?>
 
                         <h2 class="cv-section-title">Education</h2>
                         <?php
                         while ($query_education->have_posts()) :
                             $query_education->the_post();
-                            global $ps2017_current_year;
-                            $postmeta = get_post_meta( get_the_ID(), 'location', true);
-                            if ( get_the_date('Y') < $ps2017_current_year ) {
-                                $ps2017_current_year = get_the_date('Y');
-                                echo '<h3>' . $ps2017_current_year . '</h3>';
-                            };
-                            ?>
+                            $postmeta = get_post_meta( get_the_ID(), 'location', true); ?>
                         <p>
-                            <?php 
+                            <?php
+                            echo '<span class="date">' . get_the_date('Y') . '.</span> ';
                             the_title();
                             if ( $postmeta ) {
                                 echo ', <i class="location">' . $postmeta . "</i>";
-                            }; 
-                            ?>
+                            }; ?>
                         </p>
                         <?php
                         endwhile;
-                        $ps2017_current_year = 10000;
                     endif;
                     ?>
                 </div>
@@ -78,32 +72,23 @@ get_header(); ?>
                         ) 
                     );
 
-                    if ($query_talks->have_posts()) :
-                        $ps2017_current_year = 10000 
-                        ?>
+                    if ($query_talks->have_posts()) : ?>
 
                         <h2 class="cv-section-title">Talks</h2>
                         <?php
                         while ($query_talks->have_posts()) :
                             $query_talks->the_post();
-                            global $ps2017_current_year;
-                            $postmeta = get_post_meta( get_the_ID(), 'location', true);
-                            if ( get_the_date('Y') < $ps2017_current_year ) {
-                                $ps2017_current_year = get_the_date('Y');
-                                echo '<h3>' . $ps2017_current_year . '</h3>';
-                            };
-                            ?>
+                            $postmeta = get_post_meta( get_the_ID(), 'location', true); ?>
                         <p>
-                            <?php 
+                            <?php
+                            echo '<span class="date">' . get_the_date('Y') . '.</span> ';
                             the_title();
                             if ( $postmeta ) {
                                 echo ', <i class="location">' . $postmeta . "</i>";
-                            }; 
-                            ?>
+                            }; ?>
                         </p>
                         <?php
                         endwhile;
-                        $ps2017_current_year = 10000;
                     endif;
                     ?>
                 </div>
@@ -127,32 +112,22 @@ get_header(); ?>
                         ) 
                     );
 
-                    if ($query_live_performance->have_posts()) :
-                        $ps2017_current_year = 10000 
-                        ?>
+                    if ($query_live_performance->have_posts()) : ?>
 
                         <h2 class="cv-section-title">Live Performance</h2>
                         <?php
                         while ($query_live_performance->have_posts()) :
                             $query_live_performance->the_post();
-                            global $ps2017_current_year;
-                            $postmeta = get_post_meta( get_the_ID(), 'location', true);
-                            if ( get_the_date('Y') < $ps2017_current_year ) {
-                                $ps2017_current_year = get_the_date('Y');
-                                echo '<h3>' . $ps2017_current_year . '</h3>';
-                            };
-                            ?>
-                        <p>
-                            <?php 
+                            $postmeta = get_post_meta( get_the_ID(), 'location', true); ?>
+                        <p><?php
+                            echo '<span class="date">' . get_the_date('Y') . '.</span> ';
                             the_title();
                             if ( $postmeta ) {
                                 echo ', <i class="location">' . $postmeta . "</i>";
-                            }; 
-                            ?>
+                            }; ?>
                         </p>
                         <?php
                         endwhile;
-                        $ps2017_current_year = 10000;
                     endif;
                     ?>
                 </div>
@@ -171,32 +146,25 @@ get_header(); ?>
                         ) 
                     );
 
-                    if ($query_ptc->have_posts()) :
-                        $ps2017_current_year = 10000 
+                    if ($query_ptc->have_posts()) : 
                         ?>
 
                         <h2 class="cv-section-title">Performance to Camera</h2>
                         <?php
                         while ($query_ptc->have_posts()) :
                             $query_ptc->the_post();
-                            global $ps2017_current_year;
                             $postmeta = get_post_meta( get_the_ID(), 'location', true);
-                            if ( get_the_date('Y') < $ps2017_current_year ) {
-                                $ps2017_current_year = get_the_date('Y');
-                                echo '<h3>' . $ps2017_current_year . '</h3>';
-                            };
                             ?>
                         <p>
-                            <?php 
+                            <?php
+                            echo '<span class="date">' . get_the_date('Y') . '.</span> ';
                             the_title();
                             if ( $postmeta ) {
                                 echo ', <i class="location">' . $postmeta . "</i>";
-                            }; 
-                            ?>
+                            }; ?>
                         </p>
                         <?php
                         endwhile;
-                        $ps2017_current_year = 10000;
                     endif;
                     ?>
                 </div>
@@ -205,20 +173,6 @@ get_header(); ?>
             </div>
 
         </div>
-
-
-        <?php
-    endwhile;
-    else :
-    ?>
-
-        <article>
-            <h2 class="cv-section-title">Sorry, nothing to display.</h2>
-        </article>
-
-    <?php
-    endif;
-    ?>
 
 </main>
 
