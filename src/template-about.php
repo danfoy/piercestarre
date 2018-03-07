@@ -63,18 +63,18 @@ get_header(); ?>
                     <?php
 
                     /*
-                    LOOP FOR TALKS
+                    LOOP FOR TALKS AND RESIDENCIES
                     */
                         
                     $query_talks = new WP_Query( array(
-                        'category_name' => 'talks',
+                        'category_name' => 'talks-and-residencies',
                         'posts_per_page' => 10
                         ) 
                     );
 
                     if ($query_talks->have_posts()) : ?>
 
-                        <h2 class="cv-section-title">Talks</h2>
+                        <h2 class="cv-section-title">Talks and Residencies</h2>
                         <?php
                         while ($query_talks->have_posts()) :
                             $query_talks->the_post();
@@ -137,11 +137,11 @@ get_header(); ?>
                 <div class="cv-block">
                     <?php
                     /*
-                    LOOP FOR PERFORMANCE TO CAMERA
+                    LOOP FOR EXHIBITIONS
                     */
                         
                     $query_ptc = new WP_Query( array(
-                        'category_name' => 'performance-to-camera',
+                        'category_name' => 'exhibitions',
                         'posts_per_page' => 10
                         ) 
                     );
@@ -149,7 +149,7 @@ get_header(); ?>
                     if ($query_ptc->have_posts()) : 
                         ?>
 
-                        <h2 class="cv-section-title">Performance to Camera</h2>
+                        <h2 class="cv-section-title">Exhibitions</h2>
                         <?php
                         while ($query_ptc->have_posts()) :
                             $query_ptc->the_post();
