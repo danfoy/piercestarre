@@ -43,16 +43,7 @@ get_header(); ?>
                         <?php
                         while ($query_education->have_posts()) :
                             $query_education->the_post();
-                            $postmeta = get_post_meta( get_the_ID(), 'location', true); ?>
-                        <p>
-                            <?php
-                            echo '<span class="date">' . get_the_date('Y') . '.</span> ';
-                            the_title();
-                            if ( $postmeta ) {
-                                echo ', <i class="location">' . $postmeta . "</i>";
-                            }; ?>
-                        </p>
-                        <?php
+                            get_template_part('loop', 'about');
                         endwhile;
                     endif;
                     ?>
@@ -78,16 +69,7 @@ get_header(); ?>
                         <?php
                         while ($query_talks->have_posts()) :
                             $query_talks->the_post();
-                            $postmeta = get_post_meta( get_the_ID(), 'location', true); ?>
-                        <p>
-                            <?php
-                            echo '<span class="date">' . get_the_date('Y') . '.</span> ';
-                            the_title();
-                            if ( $postmeta ) {
-                                echo ', <i class="location">' . $postmeta . "</i>";
-                            }; ?>
-                        </p>
-                        <?php
+                            get_template_part('loop', 'about');
                         endwhile;
                     endif;
                     ?>
@@ -118,15 +100,7 @@ get_header(); ?>
                         <?php
                         while ($query_live_performance->have_posts()) :
                             $query_live_performance->the_post();
-                            $postmeta = get_post_meta( get_the_ID(), 'location', true); ?>
-                        <p><?php
-                            echo '<span class="date">' . get_the_date('Y') . '.</span> ';
-                            the_title();
-                            if ( $postmeta ) {
-                                echo ', <i class="location">' . $postmeta . "</i>";
-                            }; ?>
-                        </p>
-                        <?php
+                            get_template_part('loop', 'about');
                         endwhile;
                     endif;
                     ?>
@@ -153,17 +127,7 @@ get_header(); ?>
                         <?php
                         while ($query_ptc->have_posts()) :
                             $query_ptc->the_post();
-                            $postmeta = get_post_meta( get_the_ID(), 'location', true);
-                            ?>
-                        <p>
-                            <?php
-                            echo '<span class="date">' . get_the_date('Y') . '.</span> ';
-                            the_title();
-                            if ( $postmeta ) {
-                                echo ', <i class="location">' . $postmeta . "</i>";
-                            }; ?>
-                        </p>
-                        <?php
+                            get_template_part('loop', 'about');
                         endwhile;
                     endif;
                     ?>
