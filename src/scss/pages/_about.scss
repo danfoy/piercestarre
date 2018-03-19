@@ -52,6 +52,13 @@
             max-width: 100%;
         }
     }
+
+    .statement {
+        text-align: left;
+        margin-top: 10em;
+        width: inherit;
+        padding: 0 1em;
+    }
    
 
     .cv {
@@ -106,6 +113,10 @@
 @media screen and (max-width: 600px) {
     .about {
 
+        .sectionheader {
+            padding-top: 0;
+        }
+
         .bio,
         .image {
             display: block;
@@ -124,12 +135,18 @@
             padding-left: 0;
             padding-right: 0;
             font-size: 2.7em;
-            padding-top: 1.5em;
+            padding-top: 0;
 
             img {
                 width: 100%;
                 height: auto;
             }
+        }
+
+        .statement {
+            margin-top: 7em;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
         }
 
         .cv-section-title {

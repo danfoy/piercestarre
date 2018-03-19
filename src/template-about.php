@@ -12,7 +12,11 @@ get_header(); ?>
 
         <div class="sectionheader row">
             <div class="bio cv-block">
-                <?php the_content(); ?>
+                <?php 
+                $strapline = get_post_meta( get_the_ID(), 'strapline', true);
+                if ( $strapline ) {
+                    echo '<p>' . $strapline . '</p>';
+                } ?>
             </div>
             <div class="image cv-block">
                 <?php the_post_thumbnail('large'); ?>
@@ -21,6 +25,12 @@ get_header(); ?>
         <?php
         endwhile;
     endif; ?>
+
+        <div class="row">
+            <div class="statement cv-block">
+                <?php the_content(); ?>
+            </div>
+        </div>
 
         <div class="cv">
             
