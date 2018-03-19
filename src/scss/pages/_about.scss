@@ -2,12 +2,12 @@
     
     .main {
         width: 1040px;
-        min-height: 55vw;
+        min-height: 90vh;
     }
 
     .sectionheader {
         // Align with other pages
-        margin-top: 20px;
+        padding-top: 20px;
     }
 
     .cv-block {
@@ -55,31 +55,36 @@
    
 
     .cv {
-        margin-bottom: 5em;
 
-        h3,
-        p {
+        margin-top: 5em;
+        margin-bottom: 7em;
+
+        .cv-item {
             font-size: 1.3em;
+            vertical-align: top;
         }
 
-        h3 {
-            margin-top: 2.4em;
+        .cv-item-date {
+            padding-left: 0.25em; // Line up with title above
         }
 
-        p {
-            padding-right: 2em;
+        .cv-item-description {
+            padding-right: 1em;
+            padding-bottom: 0.5em;
         }
 
         i {
             font-style: normal;
+        }
+
+        .cv-block {
+            margin-top: 3em;
         }
     }
 
     .cv-section-title {
         font-size: 2.7em;
         font-weight: 400;
-        margin-top: 4em;
-        margin-bottom: 1.2em;
     }
     .cv-section-title::after {
         content: " —";
@@ -128,7 +133,7 @@
         }
 
         .cv-section-title {
-            margin-top: 2.5em;
+            margin-top: 0.5em;
         }
     
     }
@@ -139,7 +144,7 @@
 @media screen and (max-width: 425px) {
     .about {
 
-        .cv p {
+        .cv td {
             line-height: 1.3;
             margin-bottom: 1.25em;
         }

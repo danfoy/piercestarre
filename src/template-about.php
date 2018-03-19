@@ -26,7 +26,7 @@ get_header(); ?>
             
             <div class="row">
                 
-                <div class="cv-block">
+                <table class="cv-block">
                     <?php
                     /*
                     LOOP FOR EDUCATION
@@ -38,8 +38,13 @@ get_header(); ?>
                     );
 
                     if ($query_education->have_posts()) : ?>
-
-                        <h2 class="cv-section-title">Education</h2>
+                        <thead>
+                            <tr>
+                                <td colspan="2">
+                                    <h2 class="cv-section-title">Education</h2>
+                                </td>
+                            </tr>
+                        </thead>
                         <?php
                         while ($query_education->have_posts()) :
                             $query_education->the_post();
@@ -47,10 +52,10 @@ get_header(); ?>
                         endwhile;
                     endif;
                     ?>
-                </div>
+                </table>
                 
 
-                <div class="cv-block">
+                <table class="cv-block">
                     <?php
 
                     /*
@@ -65,7 +70,13 @@ get_header(); ?>
 
                     if ($query_talks->have_posts()) : ?>
 
-                        <h2 class="cv-section-title">Talks and Residencies</h2>
+                        <thead>
+                            <tr>
+                                <td colspan="2">
+                                    <h2 class="cv-section-title">Talks and Residencies</h2>
+                                </td>
+                            </tr>
+                        </thead>
                         <?php
                         while ($query_talks->have_posts()) :
                             $query_talks->the_post();
@@ -73,7 +84,7 @@ get_header(); ?>
                         endwhile;
                     endif;
                     ?>
-                </div>
+                </table>
 
             
             </div>
@@ -83,7 +94,7 @@ get_header(); ?>
                 
 
 
-                <div class="cv-block">
+                <table class="cv-block">
                     <?php
                     /*
                     LOOP FOR LIVE PERFORMANCE
@@ -96,7 +107,13 @@ get_header(); ?>
 
                     if ($query_live_performance->have_posts()) : ?>
 
-                        <h2 class="cv-section-title">Live Performance</h2>
+                        <thead>
+                            <tr>
+                                <td colspan="2">
+                                    <h2 class="cv-section-title">Live Performance</h2>
+                                </td>
+                            </tr>
+                        </thead>
                         <?php
                         while ($query_live_performance->have_posts()) :
                             $query_live_performance->the_post();
@@ -104,11 +121,11 @@ get_header(); ?>
                         endwhile;
                     endif;
                     ?>
-                </div>
+                </table>
 
 
 
-                <div class="cv-block">
+                <table class="cv-block">
                     <?php
                     /*
                     LOOP FOR EXHIBITIONS
@@ -123,7 +140,13 @@ get_header(); ?>
                     if ($query_ptc->have_posts()) : 
                         ?>
 
-                        <h2 class="cv-section-title">Exhibitions</h2>
+                        <thead>
+                            <tr>
+                                <td colspan="2">
+                                    <h2 class="cv-section-title">Exhibitions</h2>
+                                </td>
+                            </tr>
+                        </thead>
                         <?php
                         while ($query_ptc->have_posts()) :
                             $query_ptc->the_post();
@@ -131,7 +154,7 @@ get_header(); ?>
                         endwhile;
                     endif;
                     ?>
-                </div>
+                </table>
 
 
             </div>
