@@ -5,6 +5,10 @@
         min-height: 90vh;
     }
 
+    .row {
+        text-align: left;
+    }
+
     .sectionheader {
         // Align with other pages
         padding-top: 20px;
@@ -57,14 +61,14 @@
         text-align: left;
         margin-top: 10em;
         width: inherit;
-        padding: 0 1em;
+        padding: 0 0.5rem;
     }
    
 
     .cv {
 
         margin-top: 5em;
-        margin-bottom: 7em;
+        margin-bottom: 10em;
 
         .cv-item {
             font-size: 1.3em;

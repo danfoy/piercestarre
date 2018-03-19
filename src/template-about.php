@@ -167,6 +167,39 @@ get_header(); ?>
                 </table>
 
 
+
+                <table class="cv-block">
+                    <?php
+                    /*
+                    LOOP FOR PUBLICATIONS AND MEDIA
+                    */
+                        
+                    $query_ptc = new WP_Query( array(
+                        'category_name' => 'publications-media',
+                        'posts_per_page' => 10
+                        ) 
+                    );
+
+                    if ($query_ptc->have_posts()) : 
+                        ?>
+
+                        <thead>
+                            <tr>
+                                <td colspan="2">
+                                    <h2 class="cv-section-title">Publications and Media</h2>
+                                </td>
+                            </tr>
+                        </thead>
+                        <?php
+                        while ($query_ptc->have_posts()) :
+                            $query_ptc->the_post();
+                            get_template_part('loop', 'about');
+                        endwhile;
+                    endif;
+                    ?>
+                </table>
+
+
             </div>
 
         </div>
