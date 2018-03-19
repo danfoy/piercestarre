@@ -69,11 +69,11 @@ get_header(); ?>
                     <?php
 
                     /*
-                    LOOP FOR TALKS AND RESIDENCIES
+                    LOOP FOR TALKS
                     */
                         
                     $query_talks = new WP_Query( array(
-                        'category_name' => 'talks-and-residencies',
+                        'category_name' => 'talks',
                         'posts_per_page' => 10
                         ) 
                     );
@@ -83,7 +83,7 @@ get_header(); ?>
                         <thead>
                             <tr>
                                 <td colspan="2">
-                                    <h2 class="cv-section-title">Talks and Residencies</h2>
+                                    <h2 class="cv-section-title">Talks</h2>
                                 </td>
                             </tr>
                         </thead>
@@ -193,6 +193,39 @@ get_header(); ?>
                         <?php
                         while ($query_ptc->have_posts()) :
                             $query_ptc->the_post();
+                            get_template_part('loop', 'about');
+                        endwhile;
+                    endif;
+                    ?>
+                </table>
+
+
+
+                <table class="cv-block">
+                    <?php
+
+                    /*
+                    LOOP FOR Residencies
+                    */
+                        
+                    $query_talks = new WP_Query( array(
+                        'category_name' => 'residencies',
+                        'posts_per_page' => 10
+                        ) 
+                    );
+
+                    if ($query_talks->have_posts()) : ?>
+
+                        <thead>
+                            <tr>
+                                <td colspan="2">
+                                    <h2 class="cv-section-title">Residencies</h2>
+                                </td>
+                            </tr>
+                        </thead>
+                        <?php
+                        while ($query_talks->have_posts()) :
+                            $query_talks->the_post();
                             get_template_part('loop', 'about');
                         endwhile;
                     endif;
