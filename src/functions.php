@@ -53,13 +53,15 @@ function enqueue_ps2017_scripts()
         1,
         true
     );
-    wp_register_script(
-        'animate_about',
-        get_template_directory_uri() . '/js/animateabout.js',
-        array(),
-        1,
-        true
-    );
+    // Animations disabled until a later release.
+    // 
+    // wp_register_script(
+    //     'animate_about',
+    //     get_template_directory_uri() . '/js/animateabout.js',
+    //     array(),
+    //     1,
+    //     true
+    // );
     wp_enqueue_script('animate_menu');
     if (is_page('about')) {
         // wp_enqueue_script('about_slider');

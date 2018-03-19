@@ -166,32 +166,32 @@
     }
 }
 
+// Animations disabled until a later release.
 
+// @media screen and (min-width: 425px) {
 
-@media screen and (min-width: 425px) {
+//     @keyframes animateabout {
+//         from {
+//             transform: translateY(25px);
+//             opacity: 0;
+//         }
+//         to {
+//             transform: translateY(0);
+//             opacity: 1;
+//         }
+//     }
 
-    @keyframes animateabout {
-        from {
-            transform: translateY(25px);
-            opacity: 0;
-        }
-        to {
-            transform: translateY(0);
-            opacity: 1;
-        }
-    }
-
-    .js { 
+//     .js { 
         
-       .row {
-        opacity: 0;
-       }
+//        .row {
+//         opacity: 0;
+//        }
 
-        .animate {
-            animation-delay: 0.2s;
-            animation-duration: 0.5s;
-            animation-name: animateabout;
-            animation-fill-mode: forwards;
-        }
-    }
-}
+//         .animate {
+//             animation-delay: 0.2s;
+//             animation-duration: 0.5s;
+//             animation-name: animateabout;
+//             animation-fill-mode: forwards;
+//         }
+//     }
+// }
