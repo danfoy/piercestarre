@@ -20,16 +20,8 @@
     img {
         height: 180px;
         width: 180px;
-        -webkit-filter: brightness(100%);
-        filter: brightness(100%);
-        transition: all 0.5s;
     }
 
-    img:hover {
-        -webkit-filter: brightness(70%);
-        filter: brightness(70%);
-        transition: all 0.5s;
-    }
 }
 
 // Breakpoint at 3-column archive grid

@@ -1,0 +1,18 @@
+img {
+    max-width: 100%;
+    height: auto;
+    transition: all 0.5s;
+    box-shadow: 0 0 2.5rem 0.5rem rgba(0, 0, 0, .2);
+}
+
+a img {
+    -webkit-filter: brightness(100%);
+    filter: brightness(100%);
+}
+
+a img:hover {
+    -webkit-filter: brightness(70%);
+    filter: brightness(70%);
+    box-shadow: none;
+    transition: all 0.5s;
+}
