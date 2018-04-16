@@ -1,8 +1,7 @@
 .about {
     
     .main {
-        width: 1040px;
-        min-height: 90vh;
+        width: 600px;
     }
 
     .row {
@@ -11,17 +10,11 @@
 
     .sectionheader {
         // Align with other pages
-        padding-top: 20px;
+        padding-top: 0;
     }
 
     .cv-block {
-        text-align: left;
-        box-sizing: border-box;
-        padding-left: 0.5rem;
-        padding-right: 0.5rem;
-        display: inline-block;
-        width: 49%;
-        vertical-align: top;
+        text-align: center;
         line-height: 1.5;
 
         // Set custom block-level padding to override
@@ -38,18 +31,15 @@
 
     .bio {
         box-sizing: border-box;
-        font-size: 2.15em;
+        font-size: 2.5em;
         font-weight: bold;
         
         p {
-            margin-top: 2.6em;
-            padding-right: 2em;
+            line-height: 1.4;
         }
     }
 
     .image {
-        text-align: right;
-        padding-left: 1em;
 
         img {
             height: auto;
@@ -61,15 +51,38 @@
         text-align: left;
         margin-top: 2.5em;
         width: inherit;
-        padding: 0 0.5rem;
+        padding-left: 0.5em;
+        padding-right: 0.5em;
         font-size: 1.4em;
+
+        p {
+            font-size: 1em;
+        }
     }
    
 
     .cv {
-
+        padding-top: 5em;
+        border-top: 0.15em solid white;
+        border-bottom: 0.15em solid white;
         margin-top: 5em;
-        margin-bottom: 10em;
+        margin-bottom: 3em;
+
+        .cv-block {
+            margin-top: 2em;
+            margin-bottom: 7em;
+        }
+
+        .cv-section-title {
+        font-size: 3em;
+        font-weight: 400;
+        text-transform: uppercase;
+        }
+
+        .cv-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
 
         .cv-item {
             font-size: 1.3em;
@@ -77,7 +90,7 @@
         }
 
         .cv-item-date {
-            padding-left: 0.25em; // Line up with title above
+            padding-right: 0.5em; // Simulate typographic space
         }
 
         .cv-item-description {
@@ -89,17 +102,22 @@
             font-style: normal;
         }
 
-        .cv-block {
-            margin-top: 2em;
-        }
     }
 
-    .cv-section-title {
-        font-size: 2.7em;
-        font-weight: 400;
-    }
-    .cv-section-title::after {
-        content: " —";
+    .download {
+        text-transform: uppercase;
+        font-size: 1.7em;
+        margin-bottom: 3em;
+
+        a,
+        a:link,
+        a:visited {
+            text-decoration: none;
+            font-weight: bold;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
     }
 
 }
@@ -175,10 +193,6 @@
         .cv-block {
             display: block;
             width: 100%;
-        }
-
-        .cv-section-title::after {
-        content: none;
         }
 
         .bio {
