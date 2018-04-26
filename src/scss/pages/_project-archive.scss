@@ -57,10 +57,15 @@
 @media all and (max-width: 400px) {
     .post-type-archive-work {
 
-        // Stretch grid to 100% width
+        // Stretch grid to 100% width, remove margins
         .project-archive-grid {
             width: 100%;
             margin: 0;
+        }
+
+        // Remove shadow
+        .project-archive-grid img {
+            box-shadow: none;
         }
 
         // Force cells to be 50% width
