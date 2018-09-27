@@ -10,18 +10,19 @@
   "author": "Dan Foy",
   "license": "SEE LICENSE IN LICENSE.md",
   "devDependencies": {
-    "autoprefixer": "^7.2.4",
-    "browser-sync": "^2.23.3",
+    "autoprefixer": "^7.2.6",
+    "browser-sync": "^2.24.7",
     "gulp": "^3.9.1",
     "gulp-clean": "^0.4.0",
+    "gulp-cli": "^2.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-newer": "^1.4.0",
     "gulp-noop": "^1.0.0",
     "gulp-postcss": "^7.0.1",
-    "gulp-sass": "^3.1.0"
+    "gulp-sass": "^3.2.1"
   },
   "dependencies": {
-    "readable-stream": "^2.3.3",
-    "vinyl-fs": "^3.0.1"
+    "readable-stream": "^2.3.6",
+    "vinyl-fs": "^3.0.3"
   }
 }
