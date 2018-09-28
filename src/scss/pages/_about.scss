@@ -32,8 +32,9 @@
 
     .bio {
         box-sizing: border-box;
-        font-size: 2.5em;
+        font-size: 1.5em;
         font-weight: bold;
+        padding-bottom: 1em;
         
         p {
             line-height: 1.4;
@@ -124,15 +125,6 @@
 }
 
 
-@media screen and (max-width: 1040px) {
-    .about {
-
-        .bio {
-            font-size: 2vw;
-        }
-
-    }
-}
 
 @media screen and (max-width: 600px) {
     .about {
@@ -152,7 +144,9 @@
         }
 
         .bio {
-            font-size: 3vw;
+            font-size: 2.3vw;
+            padding-left: 0.5rem;
+            padding-right: 0.5rem;
 
             p {
                 margin-top: 0;
@@ -236,8 +230,7 @@
         }
 
         .bio {
-            font-size: 4.2vw;
-
+            font-size: 3.5vw;
         }
 
     }
