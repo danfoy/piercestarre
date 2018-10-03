@@ -33,187 +33,68 @@ get_header(); ?>
         </div>
 
         <div class="cv">
-        
-            
-            <div class="cv-block">
-                <?php
-                /*
-                LOOP FOR EDUCATION
-                */
-                $query_education = new WP_Query( array(
-                    'category_name' => 'education',
-                    'posts_per_page' => 10
-                    ) 
+
+            <?php
+            /**
+             * Creates a new WP Query and loops through a cateogry
+             * 
+             * @param  string $slug Lowercase slug name of the category
+             * @param  string $title Title-case version of the slug, for headers
+             * @return null
+             */
+            function createAboutLoop(string $slug, string $title) {
+
+                // Open a cv block
+                echo '<div class="cv-block">';
+
+                // Start a new WP Query and fetch 10 recent posts from this category
+                $query_{$slug} = new WP_Query(
+                    array(
+                        'category_name' => $slug,
+                        'posts_per_page' => 10
+                    )
                 );
 
-                if ($query_education->have_posts()) : ?>
+                // Test if the WP Query contains posts
+                if ($query_{$slug}->have_posts()) {
                     
-                    <h2 class="cv-section-title">Education</h2>
-                    <ol class="cv-list">
-                    <?php
-                    while ($query_education->have_posts()) :
-                        $query_education->the_post();
+                    // Output a title and start a list
+                    echo '<h2 class="cv-section-title">' . $title . '</h2>';
+                    echo '<ol class="cv-list">';
+
+                    // Loop through each post
+                    while ($query_{$slug}->have_posts()) {
+
+                        // Setup post
+                        $query_{$slug}->the_post();
+
+                        // Use a custom loop template
                         get_template_part('loop', 'about');
-                    endwhile; ?>
-                    </ol> <?php
-                endif;
-                ?>
-            </div>
-            
+                    };
 
-            <div class="cv-block">
-                <?php
+                    // Close the list
+                    echo '</ol>';
+                };
 
-                /*
-                LOOP FOR TALKS
-                */
-                    
-                $query_talks = new WP_Query( array(
-                    'category_name' => 'talks',
-                    'posts_per_page' => 10
-                    ) 
-                );
+                // Close the CV block
+                echo '</div>';
+            };
 
-                if ($query_talks->have_posts()) : ?>
+            /**
+             * Loop through each category manually
+             *
+             * I was originally going to build a plugin to allow Pierce to rearrange these,
+             * but ultimately decided to move to Gutenberg instead.
+             */
+            createAboutLoop('education', 'Education');
+            createAboutLoop('talks', 'Talks');
+            createAboutLoop('live-performance', 'Live Performance');
+            createAboutLoop('exhibitions', 'Exhibitions');
+            createAboutLoop('residencies', 'Residencies');
+            createAboutLoop('publications-media', 'Publications and Media');
 
-                    
-                    <h2 class="cv-section-title">Talks</h2>
-                    <ol class="cv-list">
-                            
-                    <?php
-                    while ($query_talks->have_posts()) :
-                        $query_talks->the_post();
-                        get_template_part('loop', 'about');
-                    endwhile; ?>
-                    </ol> <?php
-                endif;
-                ?>
-            </div>
+            ?>
 
-        
-        
-            
-
-
-            <div class="cv-block">
-                <?php
-                /*
-                LOOP FOR LIVE PERFORMANCE
-                */
-                $query_live_performance = new WP_Query( array(
-                    'category_name' => 'live-performance',
-                    'posts_per_page' => 10
-                    ) 
-                );
-
-                if ($query_live_performance->have_posts()) : ?>
-
-                    
-                    <h2 class="cv-section-title">Live Performance</h2>
-                    <ol class="cv-list">
-                            
-                    <?php
-                    while ($query_live_performance->have_posts()) :
-                        $query_live_performance->the_post();
-                        get_template_part('loop', 'about');
-                    endwhile; ?>
-                    </ol> <?php
-                endif;
-                ?>
-            </div>
-
-
-
-            <div class="cv-block">
-                <?php
-                /*
-                LOOP FOR EXHIBITIONS
-                */
-                    
-                $query_ptc = new WP_Query( array(
-                    'category_name' => 'exhibitions',
-                    'posts_per_page' => 10
-                    ) 
-                );
-
-                if ($query_ptc->have_posts()) : 
-                    ?>
-
-                    <h2 class="cv-section-title">Exhibitions</h2>
-                    <ol class="cv-list">
-                            
-                    <?php
-                    while ($query_ptc->have_posts()) :
-                        $query_ptc->the_post();
-                        get_template_part('loop', 'about');
-                    endwhile; ?>
-                    </ol> <?php
-                endif;
-                ?>
-            </div>
-
-
-
-
-            <div class="cv-block">
-                <?php
-
-                /*
-                LOOP FOR Residencies
-                */
-                    
-                $query_talks = new WP_Query( array(
-                    'category_name' => 'residencies',
-                    'posts_per_page' => 10
-                    ) 
-                );
-
-                if ($query_talks->have_posts()) : ?>
-
-                    
-                    <h2 class="cv-section-title">Residencies</h2>
-                    <ol class="cv-list">
-                            
-                    <?php
-                    while ($query_talks->have_posts()) :
-                        $query_talks->the_post();
-                        get_template_part('loop', 'about');
-                    endwhile; ?>
-                    </ol> <?php
-                endif;
-                ?>
-            </div>
-
-
-
-
-            <div class="cv-block">
-                <?php
-                /*
-                LOOP FOR PUBLICATIONS AND MEDIA
-                */
-                    
-                $query_ptc = new WP_Query( array(
-                    'category_name' => 'publications-media',
-                    'posts_per_page' => 10
-                    ) 
-                );
-
-                if ($query_ptc->have_posts()) : 
-                    ?>
-
-                    <h2 class="cv-section-title">Publications and Media</h2>
-                    <ol class="cv-list">
-                            
-                    <?php
-                    while ($query_ptc->have_posts()) :
-                        $query_ptc->the_post();
-                        get_template_part('loop', 'about');
-                    endwhile; ?>
-                    </ol> <?php
-                endif;
-                ?>
-            </div>
 
         </div>
 
