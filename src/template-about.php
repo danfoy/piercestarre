@@ -35,50 +35,6 @@ get_header(); ?>
         <div class="cv">
 
             <?php
-            /**
-             * Creates a new WP Query and loops through a cateogry
-             *
-             * @param  string $slug Lowercase slug name of the category
-             * @param  string $title Title-case version of the slug, for headers
-             * @return null
-             */
-            function createAboutLoop(string $slug, string $title) {
-
-                // Open a cv block
-                echo '<div class="cv-block">';
-
-                // Start a new WP Query and fetch 10 recent posts from this category
-                $query_{$slug} = new WP_Query(
-                    array(
-                        'category_name' => $slug,
-                        'posts_per_page' => 10
-                    )
-                );
-
-                // Test if the WP Query contains posts
-                if ($query_{$slug}->have_posts()) {
-
-                    // Output a title and start a list
-                    echo '<h2 class="cv-section-title">' . $title . '</h2>';
-                    echo '<ol class="cv-list">';
-
-                    // Loop through each post
-                    while ($query_{$slug}->have_posts()) {
-
-                        // Setup post
-                        $query_{$slug}->the_post();
-
-                        // Use a custom loop template
-                        get_template_part('loop', 'about');
-                    };
-
-                    // Close the list
-                    echo '</ol>';
-                };
-
-                // Close the CV block
-                echo '</div>';
-            };
 
             /**
              * Loop through each category manually
@@ -86,12 +42,12 @@ get_header(); ?>
              * I was originally going to build a plugin to allow Pierce to rearrange these,
              * but ultimately decided to move to Gutenberg instead.
              */
-            createAboutLoop('education', 'Education');
-            createAboutLoop('talks', 'Talks');
-            createAboutLoop('live-performance', 'Live Performance');
-            createAboutLoop('exhibitions', 'Exhibitions');
-            createAboutLoop('residencies', 'Residencies');
-            createAboutLoop('publications-media', 'Publications and Media');
+            ps2017_generate_cv_block('education', 'Education');
+            ps2017_generate_cv_block('talks', 'Talks');
+            ps2017_generate_cv_block('live-performance', 'Live Performance');
+            ps2017_generate_cv_block('exhibitions', 'Exhibitions');
+            ps2017_generate_cv_block('residencies', 'Residencies');
+            ps2017_generate_cv_block('publications-media', 'Publications and Media');
 
             ?>
 
