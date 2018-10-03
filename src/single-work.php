@@ -1,43 +1,51 @@
-<?php get_header(); ?>
+<?php 
 
-<main class="main" role="main">
+get_header();
 
-<?php
-if (have_posts()) :
-    while (have_posts()) :
+// Open <main>
+echo '<main class="main" role="main">';
+
+// Start the loop, check for posts
+if (have_posts()) {
+    while (have_posts()) {
+        
+        // Setup post
         the_post();
 
+        // Set up local variables
         $meta_location = get_post_meta( get_the_ID(), 'location', true);
-
         $content = get_the_content();
+        
+        // Get first image tag in $content and add to array $matches
         preg_match("/<img[^>]+\>/i", $content, $matches);
+        // Strip images from $content
         $content = preg_replace("/<img[^>]+\>/i", "", $content);
+        // Insert first stripped image here, above content, if available
+        if ($matches) {
+            echo $matches[0];
+        };
 
-        echo $matches[0];
+        // Set up post title and meta area
+        echo '<h1 class="project-title">' . get_the_title() . '</h1>';
+        echo '<div class="project-date">'. get_the_time('j F Y') . '</div>';
+        if ( $meta_location ) {
+            echo '<div class="project-location">' . $meta_location . "</div>";
+        };
 
-    ?>
+        // Set up post content/description area
+        echo '<div class="project-description">';
+        // Print post content, now stripped of images
+        echo wpautop( $content );
+        echo '</div>';
 
-    <h1 class="project-title"><?php the_title(); ?></h1>
-    <div class="project-date"><?php the_time('j F Y'); ?></div>
-    <?php
-    if ( $meta_location ) {
-        echo '<div class="project-location">' . $meta_location . "</div>";
     };
-    ?>
 
-    <div class="project-description">
-       <?php echo wpautop( $content ); ?>
-    </div>
+// Display message if no posts found
+} else {
+    echo '<h1>Sorry, nothing to display.</h1>';
+};
 
-    <?php
-    endwhile;
-    else : ?>
+// Close <main>
+echo '</main>';
 
-    <h1>Sorry, nothing to display.</h1>
-
-<?php
-endif; ?>
-
-</main>
-
-<?php get_footer();
+get_footer();
