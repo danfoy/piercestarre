@@ -6,7 +6,7 @@
 if (have_posts()) :
     while (have_posts()) :
         the_post();
-    ?>
+        ?>
 
     <h1>
         <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
@@ -18,16 +18,16 @@ if (have_posts()) :
 
     <?php
     the_content();
-    
-    endwhile;
-else : ?>
 
-    
+    endwhile;
+    else : ?>
+
     <h1>Sorry, nothing to display.</h1>
 
 <?php
-endif; ?>
+endif;
+?>
 
 </main>
 
-<?php get_footer(); ?>
+<?php get_footer();

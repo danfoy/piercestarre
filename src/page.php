@@ -2,21 +2,22 @@
 
 <main class="main" role="main">
 <?php
-    
+
 ?>
 <?php
 if (have_posts()) :
     while (have_posts()) :
-        the_post();  
+        the_post();
         the_content();
     endwhile;
-else : ?>
+	else : ?>
 
     <h1>Sorry, nothing to display.</h1>
 
 <?php
-endif; ?>
+endif;
+?>
 
 </main>
 
-<?php get_footer(); ?>
+<?php get_footer();

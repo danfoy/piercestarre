@@ -1,4 +1,3 @@
-
 <footer>
     <?php
     if ( 'work' === get_post_type() && ! is_archive() ) : ?>

@@ -27,12 +27,12 @@
 // Breakpoint at 3-column archive grid
 @media all and (max-width: 660px) {
     .post-type-archive-work {
-        
+
         // Reduce to 2 columns
         .project-archive-grid {
             width: 440px;
         }
-    
+
     }
 }
 
@@ -69,7 +69,7 @@
         }
 
         // Force cells to be 50% width
-        // 
+        //
         // Will cause some upscaling on 4.7" screens
         // However phones of this age should have decent
         // upscaling filters so this is an acceptable compromise.

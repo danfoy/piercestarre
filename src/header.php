@@ -23,7 +23,7 @@
         (function(doc, classToAdd){
             doc.className = (doc.className).replace("no-js", classToAdd);
         })(document.documentElement, "js");
-</script>
+    </script>
 
     <?php wp_head(); ?>
 

@@ -33,7 +33,7 @@
         margin: 3.2rem 0 1.8rem 0;
         text-transform: uppercase;
         font-size: 5.6em;
-        
+
 
         a:hover {
             // Override hover effects on title
@@ -43,7 +43,7 @@
 
 
     .site-nav {
-        
+
         ul {
             display: inline-block;
             list-style-type: none;
@@ -55,7 +55,7 @@
             display: inline-block;
             font-size: 1.3em;
             padding: 0 1em;
-        }  
+        }
     }
 }
 
@@ -164,13 +164,13 @@
 
 
 @media screen and (max-width: 500px) {
-    
+
     .main {
         margin-top : 52vw;
     }
 
     .site-header {
-        
+
         .site-title {
            margin: 12vw 0 5vw 0;
            font-size: 10vw;
@@ -179,7 +179,7 @@
         .menubutton {
             font-size: 8vw;
         }
-    
+
     }
 }
 

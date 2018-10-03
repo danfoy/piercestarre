@@ -31,4 +31,4 @@ else :
 	</article>
 	<!-- /article -->
 
-<?php endif; ?>
+<?php endif;

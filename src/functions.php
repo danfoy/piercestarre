@@ -27,7 +27,7 @@ if (function_exists('add_theme_support')) {
 
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
-    
+
 }
 
 // Enque stylesheet function
@@ -54,7 +54,7 @@ function enqueue_ps2017_scripts()
         true
     );
     // Animations disabled until a later release.
-    // 
+    //
     // wp_register_script(
     //     'animate_about',
     //     get_template_directory_uri() . '/js/animateabout.js',
@@ -240,4 +240,4 @@ function create_post_type_ps2017_portfolio()
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true // Allows export in Tools > Export
     ));
-}
+};

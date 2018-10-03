@@ -15,28 +15,28 @@ function PictureSlider(target) {
  * [beginTracking begin tracking for scrolling]
  */
 PictureSlider.prototype.beginTracking = function () {
-    
+
     window.addEventListener('scroll', function () {
 
-        
+
         var scrollPosition = window.pageYOffset;
         var distanceToEdge = this.moveTargetPosition.right - (window.pageYOffset * 4);
 
-        if (window.innerWidth >= 799 && 
+        if (window.innerWidth >= 799 &&
             window.innerWidth <= 1440) {
-            
+
             // Target is landscape tablets and
             // computers  up to 15" mbp
-            
+
             this.moveTarget.style.right = ((scrollPosition * 4) + 'px');
             this.moveTarget.style.top = ((scrollPosition * 2) + 'px');
-            
+
             if (distanceToEdge <= 0) {
                 this.moveTarget.style.display = 'none';
             } else {
                 this.moveTarget.style.display = 'inline-block';
             }
-        
+
         } else if (window.innerWidth > 1440 &&
                    window.innerWidth <= 1920) {
 
@@ -53,7 +53,7 @@ PictureSlider.prototype.beginTracking = function () {
                 this.moveTarget.style.display = 'inline-block';
             }
         }
-    
+
     }.bind(this));
 
 };

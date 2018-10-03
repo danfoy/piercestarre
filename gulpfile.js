@@ -120,7 +120,7 @@ gulp.task('css', () => {
     .pipe(postcss(css.processors))
     .pipe(gulp.dest(css.build))
     .pipe(browsersync
-        ? browsersync.reload({ stream: true }) 
+        ? browsersync.reload({ stream: true })
         : noop()
     );
 });
@@ -157,11 +157,11 @@ gulp.task('watch', ['browsersync'], () => {
 
 // Default Task
 gulp.task('default', [
-    'php', 
-    'js', 
-    'css', 
-    'fonts', 
-    'img', 
+    'php',
+    'js',
+    'css',
+    'fonts',
+    'img',
     'screenshot'
     ]
 );

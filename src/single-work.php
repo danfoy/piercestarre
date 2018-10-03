@@ -6,15 +6,15 @@
 if (have_posts()) :
     while (have_posts()) :
         the_post();
-    
+
         $meta_location = get_post_meta( get_the_ID(), 'location', true);
-    
+
         $content = get_the_content();
         preg_match("/<img[^>]+\>/i", $content, $matches);
         $content = preg_replace("/<img[^>]+\>/i", "", $content);
-    
+
         echo $matches[0];
-    
+
     ?>
 
     <h1 class="project-title"><?php the_title(); ?></h1>
@@ -22,18 +22,17 @@ if (have_posts()) :
     <?php
     if ( $meta_location ) {
         echo '<div class="project-location">' . $meta_location . "</div>";
-    }; 
+    };
     ?>
 
     <div class="project-description">
        <?php echo wpautop( $content ); ?>
     </div>
-    
+
     <?php
     endwhile;
-else : ?>
+    else : ?>
 
-    
     <h1>Sorry, nothing to display.</h1>
 
 <?php
@@ -41,4 +40,4 @@ endif; ?>
 
 </main>
 
-<?php get_footer(); ?>
+<?php get_footer();

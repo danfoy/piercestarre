@@ -1,12 +1,12 @@
 (function() {
-    
+
     /**
      * Takes all elements of a given class and adds an 'animation' class
      * to each sequentially after a specified delay.
      * @param  {string} targetClass Class to target
      */
     function animateAbout(targetClass) {
-	
+
 	var elementList = document.getElementsByClassName(targetClass);
 
     /**

@@ -1,5 +1,5 @@
 .about {
-    
+
     .main {
         width: 600px;
         box-sizing: border-box;
@@ -35,7 +35,7 @@
         font-size: 1.5em;
         font-weight: bold;
         padding-bottom: 1em;
-        
+
         p {
             line-height: 1.4;
         }
@@ -60,7 +60,7 @@
             font-size: 1em;
         }
     }
-   
+
 
     .cv {
         padding-top: 5em;
@@ -168,7 +168,7 @@
         .statement {
             font-size: 1em;
             margin-top: 1em;
-                
+
                 p {
                     font-size: 1.4em;
                 }
@@ -179,9 +179,9 @@
             padding-left: 1rem;
             padding-right: 1rem;
         }
-        
+
         .cv {
-            
+
             .cv-item {
                 margin-bottom: 1em;
             }
@@ -202,9 +202,9 @@
             .cv-item-date::after {
                 content: none;
             }
-        
+
         }
-    
+
     }
 }
 
@@ -251,8 +251,8 @@
 //         }
 //     }
 
-//     .js { 
-        
+//     .js {
+
 //        .row {
 //         opacity: 0;
 //        }

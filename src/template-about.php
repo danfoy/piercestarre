@@ -1,5 +1,5 @@
-<?php 
-/* Template Name: About Page Template */ 
+<?php
+/* Template Name: About Page Template */
 get_header(); ?>
 
 <main class="main" role="main">
@@ -12,7 +12,7 @@ get_header(); ?>
 
         <div class="sectionheader row">
             <div class="bio cv-block">
-                <?php 
+                <?php
                 $strapline = get_post_meta( get_the_ID(), 'strapline', true);
                 if ( $strapline ) {
                     echo '<p>' . $strapline . '</p>';
@@ -37,7 +37,7 @@ get_header(); ?>
             <?php
             /**
              * Creates a new WP Query and loops through a cateogry
-             * 
+             *
              * @param  string $slug Lowercase slug name of the category
              * @param  string $title Title-case version of the slug, for headers
              * @return null
@@ -57,7 +57,7 @@ get_header(); ?>
 
                 // Test if the WP Query contains posts
                 if ($query_{$slug}->have_posts()) {
-                    
+
                     // Output a title and start a list
                     echo '<h2 class="cv-section-title">' . $title . '</h2>';
                     echo '<ol class="cv-list">';
@@ -104,4 +104,4 @@ get_header(); ?>
 
 </main>
 
-<?php get_footer(); ?>
+<?php get_footer();

@@ -7,14 +7,14 @@
  * @param {string} button    CSS class of the hamburger button element
  */
 function AnimateMenu(container, title, nav, button) {
-    
+
     // Properties pulled from arguments
     this.containerElement = document.querySelector('.' + container);
     this.titleElement = this.containerElement.querySelector('.' + title);
     this.navElement = this.containerElement.querySelector('.' + nav);
     this.menuButton = this.containerElement.querySelector('.' + button);
-    
-    // 
+
+    //
     this.startTargetPosition = this.navElement
         .getBoundingClientRect().bottom;
 
@@ -52,7 +52,7 @@ AnimateMenu.prototype.autoButtonFunction = function () {
 
     // Toggle visibility of nav element after render.
     // This is hidden in `_header.scss` when JS is available,
-    // and prevents a FOUC while the script decides whether to buttonize 
+    // and prevents a FOUC while the script decides whether to buttonize
     this.navElement.style.visibility = 'visible';
 
 };
@@ -60,7 +60,7 @@ AnimateMenu.prototype.autoButtonFunction = function () {
 
 AnimateMenu.prototype.buttonClickFunction = function () {
 
-    // Toggle container class on button click 
+    // Toggle container class on button click
     this
         .containerElement
         .classList
@@ -69,7 +69,7 @@ AnimateMenu.prototype.buttonClickFunction = function () {
 
 
 AnimateMenu.prototype.beginTracking = function () {
-    
+
     window.addEventListener('scroll', this.scrollFunction.bind(this));
     window.addEventListener('scroll', this.autoButtonFunction.bind(this));
     window.addEventListener('resize', this.autoButtonFunction.bind(this));
