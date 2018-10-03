@@ -35,7 +35,7 @@
         <div class="headerwrapper">
             <h1 class="site-title"><a href="<?php bloginfo('url'); ?>"><?php bloginfo('name'); ?></a></h1>
             <nav class="site-nav">
-                <a class="menubutton">&#9776</a>
+                <a class="menubutton">&#9776;</a>
                 <?php
                 wp_nav_menu(array(
                     'theme_location' => 'sitenav',
