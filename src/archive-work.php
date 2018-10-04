@@ -1,37 +1,45 @@
-<?php get_header(); ?>
+<?php 
 
-<main class="main" role="main">
+get_header();
 
-    <?php
-    if (have_posts()) :
-    ?>
-    <ul class="project-archive-grid">
-    <?php
-    while (have_posts()) :
+echo '<main class="main" role="main">';
+
+// Check for posts
+if (have_posts()) {
+
+    // Open list of projects
+    echo '<ol class="project-archive-grid">';
+
+    // For each post...
+    while (have_posts()) {
+
+        // Setup post
         the_post();
-        ?>
-        <li class="project-archive-item">
-            <a class="project-archive-item-link" href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-                <?php the_post_thumbnail('work-thumbnail'); ?>
-            </a>
-        </li>
+        
+        // Create a list item for each post
+        echo '<li class="project-archive-item">';
+        echo    '<a class="project-archive-item-link" href="' . get_the_permalink() . '" title="' . get_the_title() . '">';
+        
+        if (has_post_thumbnail()) {
+            the_post_thumbnail('work-thumbnail');
+        } else {
+            echo '<span class="post-thumbnail-placeholder">PS</span>';
+        };
 
-    <?php
-    endwhile;
-    ?>
-    </ul>
-    <?php
-    else :
-    ?>
+        echo    '</a>'; // .project-archive-item-link
+        echo '</li>'; // .project-archive-item
+    }
+    
+    // Close the list
+    echo '</ol>'; // .project-archive-grid
+    
+} else {
+    // Handle display when there are no posts
+    echo '<article>';
+    echo    '<h2>Sorry, nothing to display.</h2>';
+    echo '</article>';
+}
 
-        <article>
-            <h2>Sorry, nothing to display.</h2>
-        </article>
+echo '</main>'; // .main
 
-    <?php
-    endif;
-    ?>
-
-</main>
-
-<?php get_footer();
+get_footer();

@@ -1,27 +1,58 @@
 .post-type-archive-work {
-    .main {
-        text-align: center;
-    }
+
+    // Grid is an ordered list. Make it display as a grid of items using
+    // flexbox, and remove list styling.
     .project-archive-grid {
         list-style-type: none;
         margin: 20px auto;
         padding: 0;
-        text-align: left;
         width: 660px;
-        font-size: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: flex-start;
     }
 
+    // Each item should be a block and have a margin
     .project-archive-item {
         display: inline-block;
         margin: 20px;
-        padding: 0;
     }
 
-    img {
+    // Remove underlines from links
+    // Shouldn't appear on images anyway, but also removes from
+    // .post-thumbnail-placeholder
+    .project-archive-item-link {
+        text-decoration: none;
+    }
+
+    // Set fixed size for each box, and center contents vertically and
+    // horizontally (particularly for .post-thumbnail-placeholder)
+    .project-archive-item-link * {
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
         height: 180px;
         width: 180px;
     }
 
+    // Handle posts which don't have a featured image
+    .post-thumbnail-placeholder {
+        font-size: 10em;
+        color: #fff;
+        // mirror image styles from _images.scss
+        -webkit-filter: brightness(100%);
+        filter: brightness(100%);
+        transition: all 0.5s;
+        box-shadow: 0 0 2.5rem 0.5rem rgba(0, 0, 0, .2);
+    }
+
+    .post-thumbnail-placeholder:hover {
+        // Mirror image styles from _images.scss
+        -webkit-filter: brightness(70%);
+        filter: brightness(70%);
+        box-shadow: none;
+        transition: all 0.5s;
+    }
 }
 
 // Breakpoint at 3-column archive grid
@@ -64,7 +95,8 @@
         }
 
         // Remove shadow
-        .project-archive-grid img {
+        .project-archive-grid img,
+        .post-thumbnail-placeholder {
             box-shadow: none;
         }
 
@@ -73,11 +105,21 @@
         // Will cause some upscaling on 4.7" screens
         // However phones of this age should have decent
         // upscaling filters so this is an acceptable compromise.
-        .project-archive-item,
-        img {
+
+        .project-archive-item {
+            margin: 0;
+        }
+
+        .project-archive-item-link * {
             width: 50vw;
             height: 50vw;
-            margin: 0;
+        }
+
+        // Add a border and shrink text on mobile displays
+        .post-thumbnail-placeholder {
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            font-size: 6em;
         }
 
     }
