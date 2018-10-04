@@ -25,7 +25,7 @@ const dir = {
 
 // PHP settings
 const php = {
-    src: dir.src + '/**/*.php',
+    src: dir.src + 'php/**/*.php',
     build: dir.build
 };
 
@@ -108,7 +108,7 @@ gulp.task('img', () => {
 
 // copy screenshot
 gulp.task('screenshot', () => {
-    return gulp.src(dir.src + 'screenshot.png')
+    return gulp.src(dir.src + 'img/screenshot.png')
     .pipe(newer(dir.build))
     .pipe(gulp.dest(dir.build));
 });
