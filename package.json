@@ -10,8 +10,8 @@
   "license": "SEE LICENSE IN LICENSE.md",
   "main": "README.md",
   "repository": {
-    "type" : "git",
-    "url" : "https://github.com/danfoy/piercestarre.git"
+    "type": "git",
+    "url": "https://github.com/danfoy/piercestarre.git"
   },
   "scripts": {
     "start-dev": "cd vagrant && vagrant up && cd ../ && gulp watch",
@@ -27,6 +27,7 @@
     "gulp-newer": "^1.4.0",
     "gulp-noop": "^1.0.0",
     "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.4.0",
     "gulp-sass": "^3.2.1"
   },
   "dependencies": {

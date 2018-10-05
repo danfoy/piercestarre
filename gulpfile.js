@@ -6,6 +6,7 @@ const
     gulp = require('gulp'),
     noop = require('gulp-noop'),
     newer = require('gulp-newer'),
+    rename = require('gulp-rename'),
     sass = require('gulp-sass'),
     postcss = require('gulp-postcss'),
     concat = require('gulp-concat'),
@@ -31,7 +32,7 @@ const php = {
 
 // Javascript Settings
 const js = {
-    src: dir.src + '/js/*.js',
+    src: dir.src + 'js/*.js',
     build: dir.build + 'js/'
 };
 
@@ -43,8 +44,12 @@ const fonts = {
 
 // Image settings
 const img = {
-    src: dir.src + 'img',
-    build: dir.build + 'img'
+    src: [
+        dir.src + 'img/**/*',
+        '!' + dir.src + '{assets,assets/**}',
+        '!' + dir.src + 'screenshot.png'
+        ],
+    build: dir.build + 'img/'
 }
 
 // CSS settings
@@ -82,6 +87,7 @@ const syncOpts = {
 gulp.task('php', () => {
     return gulp.src(php.src)
     .pipe(newer(php.build))
+    .pipe(rename({dirname: ''}))
     .pipe(gulp.dest(php.build));
 });
 
