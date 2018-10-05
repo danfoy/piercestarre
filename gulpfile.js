@@ -45,9 +45,9 @@ const fonts = {
 // Image settings
 const img = {
     src: [
-        dir.src + 'img/**/*',
-        '!' + dir.src + '{assets,assets/**}',
-        '!' + dir.src + 'screenshot.png'
+        'src/img/**/*',
+        '!src/img/{assets,assets/**}',
+        '!src/img/screenshot.png'
         ],
     build: dir.build + 'img/'
 }
