@@ -185,6 +185,28 @@ function ps2017_generate_cv_block(string $slug, string $title) {
 };
 
 
+/**
+ * Checks if the current post contains a gallery shortcode, else null
+ * 
+ * @return boolean
+ */
+function ps2017_has_gallery(){
+    
+    // Get the post
+    global $post;
+    
+    // Get shortcode regex pattern
+    $regex_pattern = get_shortcode_regex();
+
+    if (    preg_match_all( '/'. $regex_pattern .'/s', $post->post_content, $matches )
+            && array_key_exists( 2, $matches )
+            && in_array( 'gallery', $matches[2] )
+    ) {
+        return true;
+    };
+};
+
+
 /*------------------------------------*\
 	Actions + Filters + ShortCodes
 \*------------------------------------*/
