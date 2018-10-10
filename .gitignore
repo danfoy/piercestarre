@@ -5,3 +5,4 @@ dist/
 chassis-backup.sql
 *.sublime*
 credentials.md
+.phpintel
