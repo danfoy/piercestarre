@@ -10,7 +10,6 @@ get_header(); ?>
             the_post();
             ?>
 
-        <div class="row">
             <div class="strapline">
                 <?php
                 $strapline = get_post_meta( get_the_ID(), 'strapline', true);
@@ -18,18 +17,17 @@ get_header(); ?>
                     echo '<p>' . $strapline . '</p>';
                 } ?>
             </div>
+            
             <div class="image">
                 <?php the_post_thumbnail('large'); ?>
             </div>
-        </div>
+            
         <?php
         endwhile;
     endif; ?>
 
-        <div class="row">
-            <div class="statement">
-                <?php the_content(); ?>
-            </div>
+        <div class="statement">
+            <?php the_content(); ?>
         </div>
 
         <div class="cv">
