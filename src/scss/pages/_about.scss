@@ -12,7 +12,6 @@
         }
 
     .main {
-        width: 600px;
         box-sizing: border-box;
         text-align: center;
         line-height: 1.5;
@@ -25,13 +24,21 @@
 
     .strapline {
         box-sizing: border-box;
-        font-size: 1.5em;
+        font-size: 2.1em;
         font-weight: bold;
-        padding-bottom: 1em;
+        padding-bottom: 2em;
 
         p {
             line-height: 1.4;
         }
+    }
+
+    .image,
+    .statement,
+    .cv {
+        width: 600px;
+        margin-left: auto;
+        margin-right: auto;
     }
 
     .image {
@@ -45,7 +52,6 @@
     .statement {
         text-align: justify;
         margin-top: 2.5em;
-        width: inherit;
         font-size: 1.4em;
         box-sizing: border-box;
 
