@@ -187,16 +187,16 @@ function ps2017_generate_cv_block(string $slug, string $title) {
 
 /**
  * Checks if the current post contains a gallery shortcode, else null
- * 
+ *
  * @return boolean
  */
 function ps2017_has_gallery(){
-    
+
     // Get the post
     global $post;
-    
+
     // Get shortcode regex pattern
-    $regex_pattern = get_shortcode_regex();
+    $regex_pattern = get_shortcode_regex(['gallery']);
 
     if (    preg_match_all( '/'. $regex_pattern .'/s', $post->post_content, $matches )
             && array_key_exists( 2, $matches )
@@ -204,6 +204,46 @@ function ps2017_has_gallery(){
     ) {
         return true;
     };
+};
+
+function ps2017_sidescroll_gallery() {
+
+    // Get the post
+    global $post;
+
+    // Get first gallery from the post
+    $gallery = get_post_gallery( get_the_ID(), false );
+
+    if ($gallery) {
+
+        // Split gallery shortcode into image IDs
+        $imageIds = explode(',', $gallery['ids']);
+
+        // Set init variable for while loop
+        $i = 0;
+
+        //Setup table
+        echo '<table class="gallery-sidescroll"><tr>';
+
+        // Loop through images as table cells
+        while ($i < count($imageIds)) {
+            echo '<td>';
+            echo wp_get_attachment_image( $imageIds[$i], $size = 'large', $icon = false, $attr = '' );
+            echo '</td>';
+            $i++;
+        };
+
+        // Close table
+        echo '</tr></table>'; // .gallery-sidescroll
+    };
+
+    echo remove_shortcode('gallery');
+
+    // foreach ($imageIds as $id) {
+    //     echo wp_get_attachment_image( $id, $size = 'large', $icon = false, $attr = '' );
+    //     echo '<br>';
+    // }
+
 };
 
 

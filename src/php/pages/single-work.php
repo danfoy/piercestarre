@@ -32,6 +32,10 @@ if (have_posts()) {
             echo '<div class="project-location">' . $meta_location . "</div>";
         };
 
+        if (ps2017_has_gallery()) {
+            ps2017_sidescroll_gallery();
+        };
+
         // Set up post content/description area
         echo '<div class="project-description">';
         // Print post content, now stripped of images
