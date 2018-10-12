@@ -10,7 +10,7 @@ get_header(); ?>
             the_post();
             ?>
 
-        <div class="sectionheader row">
+        <div class="row">
             <div class="strapline">
                 <?php
                 $strapline = get_post_meta( get_the_ID(), 'strapline', true);

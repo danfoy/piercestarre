@@ -16,11 +16,11 @@
         box-sizing: border-box;
         text-align: center;
         line-height: 1.5;
-    }
 
-    .sectionheader {
-        // Align with other pages
-        padding-top: 0;
+        div:first-child {
+            // Align with other pages
+            padding-top: 0;
+        }
     }
 
     .strapline {
@@ -124,10 +124,6 @@
 
         .main {
             width: 100%;
-        }
-
-        .sectionheader {
-            padding-top: 0;
         }
 
         .strapline,
