@@ -11,14 +11,14 @@ get_header(); ?>
             ?>
 
         <div class="sectionheader row">
-            <div class="bio cv-block">
+            <div class="strapline">
                 <?php
                 $strapline = get_post_meta( get_the_ID(), 'strapline', true);
                 if ( $strapline ) {
                     echo '<p>' . $strapline . '</p>';
                 } ?>
             </div>
-            <div class="image cv-block">
+            <div class="image">
                 <?php the_post_thumbnail('large'); ?>
             </div>
         </div>
@@ -27,7 +27,7 @@ get_header(); ?>
     endif; ?>
 
         <div class="row">
-            <div class="statement cv-block">
+            <div class="statement">
                 <?php the_content(); ?>
             </div>
         </div>
@@ -54,7 +54,7 @@ get_header(); ?>
 
         </div>
 
-        <div class="cv-block download">
+        <div class="download">
             <a href="#" target="_blank">Click here to download CV</a>
         </div>
 

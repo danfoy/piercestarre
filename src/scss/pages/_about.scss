@@ -1,24 +1,6 @@
 .about {
 
-    .main {
-        width: 600px;
-        box-sizing: border-box;
-    }
-
-    .row {
-        text-align: left;
-    }
-
-    .sectionheader {
-        // Align with other pages
-        padding-top: 0;
-    }
-
-    .cv-block {
-        text-align: center;
-        line-height: 1.5;
-
-        // Set custom block-level padding to override
+    // Set custom block-level padding to override
         // generic settings in global.scss
         p,
         h1,
@@ -28,9 +10,20 @@
             padding-left: inherit;
             padding-right: inherit;
         }
+
+    .main {
+        width: 600px;
+        box-sizing: border-box;
+        text-align: center;
+        line-height: 1.5;
     }
 
-    .bio {
+    .sectionheader {
+        // Align with other pages
+        padding-top: 0;
+    }
+
+    .strapline {
         box-sizing: border-box;
         font-size: 1.5em;
         font-weight: bold;
@@ -137,13 +130,13 @@
             padding-top: 0;
         }
 
-        .bio,
+        .strapline,
         .image {
             display: block;
             width: 100%;
         }
 
-        .bio {
+        .strapline {
             font-size: 2.3vw;
             padding-left: 0.5rem;
             padding-right: 0.5rem;
@@ -229,7 +222,7 @@
             width: 100%;
         }
 
-        .bio {
+        .strapline {
             font-size: 3.5vw;
         }
 
