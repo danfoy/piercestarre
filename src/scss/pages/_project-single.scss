@@ -1,24 +1,35 @@
-.single-work .main {
-    width: 930px;
-}
+.single-work {
 
-.project-title {
-    font-style: italic;
-    margin: 2.5em auto;
-}
+    .main {
+        width: inherit; // Override global width setting
+    }
 
-.project-location,
-.project-date {
-    margin: 0 auto;
-    font-size: 1.3em;
-    line-height: 1.6;
-}
+    .project-title,
+    .project-date,
+    .project-location,
+    .project-description p {
+        width: 930px;
+        margin-left: auto;
+        margin-right: auto;
+    }
 
-.project-description {
-    margin-bottom: 5em;
-    margin-top: 5em;
-}
+    .project-title {
+        font-style: italic;
+        margin: 2.5em auto;
+    }
 
+    .project-location,
+    .project-date {
+        font-size: 1.3em;
+        line-height: 1.6;
+    }
+
+    .project-description {
+        margin-bottom: 5em;
+        margin-top: 5em;
+    }
+
+}
 
 @media screen and (max-width: 630px) {
     .project-description {

@@ -20,21 +20,27 @@ if (have_posts()) {
         preg_match("/<img[^>]+\>/i", $content, $matches);
         // Strip images from $content
         $content = preg_replace("/<img[^>]+\>/i", "", $content);
+        // Strip [gallery] shortcode from $content
+        $content = preg_replace("/\[gallery[^\]]+\]/i", "", $content);
         // Insert first stripped image here, above content, if available
         if ($matches) {
             echo $matches[0];
         };
 
-        // Set up post title and meta area
+        // Print post title
         echo '<h1 class="project-title">' . get_the_title() . '</h1>';
+
+        // Insert the sidescroll gallery if there is one
+        if (ps2017_has_gallery()) {
+            ps2017_sidescroll_gallery();
+        };
+
+        // Print project deta and location
         echo '<div class="project-date">'. get_the_time('j F Y') . '</div>';
         if ( $meta_location ) {
             echo '<div class="project-location">' . $meta_location . "</div>";
         };
 
-        if (ps2017_has_gallery()) {
-            ps2017_sidescroll_gallery();
-        };
 
         // Set up post content/description area
         echo '<div class="project-description">';

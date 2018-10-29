@@ -206,6 +206,12 @@ function ps2017_has_gallery(){
     };
 };
 
+
+/**
+ * Prints a custom gallery, overwriting [gallery] shortcode
+ * 
+ * @return null
+ */
 function ps2017_sidescroll_gallery() {
 
     // Get the post
@@ -223,26 +229,18 @@ function ps2017_sidescroll_gallery() {
         $i = 0;
 
         //Setup table
-        echo '<table class="gallery-sidescroll"><tr>';
+        echo '<div class="gallery-sidescroll">';
 
-        // Loop through images as table cells
+        // Loop through array -> figure elements
         while ($i < count($imageIds)) {
-            echo '<td>';
+            echo '<figure class="gallery-sidescroll-element">';
             echo wp_get_attachment_image( $imageIds[$i], $size = 'large', $icon = false, $attr = '' );
-            echo '</td>';
+            echo '</figure>'; // .gallery-sidescroll-element
             $i++;
         };
 
-        // Close table
-        echo '</tr></table>'; // .gallery-sidescroll
+        echo '</div>'; // .gallery-sidescroll
     };
-
-    echo remove_shortcode('gallery');
-
-    // foreach ($imageIds as $id) {
-    //     echo wp_get_attachment_image( $id, $size = 'large', $icon = false, $attr = '' );
-    //     echo '<br>';
-    // }
 
 };
 

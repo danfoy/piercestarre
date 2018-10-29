@@ -1,0 +1,27 @@
+.gallery-sidescroll {
+
+	display: flex;			// to allow nowrap property
+	margin-bottom: 5em; 	// to match project header (2.5em x 2em)
+	overflow-x: auto;		// force scroll bars
+
+	figure {
+		flex-wrap: nowrap;		// force single row of images
+		margin: 0 3em 2em 0;	// required to remove -webkit-margin-before
+	}
+
+	// Set offset on both sides to line up with content
+	// (50vw = centre, - half of 930px content width)
+	figure:first-of-type {
+		padding-left: calc(50vw - 465px);
+	}
+	figure:last-of-type {
+		padding-right: calc(50vw - 465px);
+	}
+	
+	// remove global styles
+	img {
+		max-width: none;
+		max-height: none;
+		box-shadow: none;
+	}
+}
