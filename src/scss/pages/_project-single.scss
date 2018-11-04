@@ -31,7 +31,17 @@
 
 }
 
-@media screen and (max-width: 630px) {
+@media screen and (max-width: 950px) {
+    .project-title,
+    .project-date,
+    .project-location,
+    .project-description p {
+        max-width: 100%;
+        width: inherit;
+        margin-left: 1em;
+        margin-right: 1em;
+        box-sizing: border-box;
+    }
     .project-description {
         text-align: left;
     }
