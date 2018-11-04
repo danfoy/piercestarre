@@ -10,12 +10,12 @@
 	}
 
 	// Set offset on both sides to line up with content
-	// (50vw = centre, - half of 930px content width)
+	// (50vw = centre, - half of 600px standard image size)
 	figure:first-of-type {
-		padding-left: calc(50vw - 465px);
+		padding-left: calc(50vw - 300px);
 	}
 	figure:last-of-type {
-		padding-right: calc(50vw - 465px);
+		padding-right: calc(50vw - 300px);
 	}
 	
 	// remove global styles
