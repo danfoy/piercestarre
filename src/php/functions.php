@@ -234,7 +234,7 @@ function ps2017_sidescroll_gallery() {
         // Loop through array -> figure elements
         while ($i < count($imageIds)) {
             echo '<figure class="gallery-sidescroll-element">';
-            echo wp_get_attachment_image( $imageIds[$i], $size = 'large', $icon = false, $attr = '' );
+            echo wp_get_attachment_image( $imageIds[$i], $size = 'medium', $icon = false, $attr = '' );
             echo '</figure>'; // .gallery-sidescroll-element
             $i++;
         };
