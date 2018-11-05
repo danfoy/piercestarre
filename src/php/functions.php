@@ -336,6 +336,7 @@ function create_post_type_ps2017_portfolio()
             'use_featured_image' => ('Use As Portfolio Archive Thumbnail'),
         ),
         'public' => true,
+        'publicly_queryable' => true,
         'hierarchical' => false,
         'has_archive' => true,
         'supports' => array(
