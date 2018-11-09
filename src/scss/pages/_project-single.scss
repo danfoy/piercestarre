@@ -19,9 +19,14 @@
     }
 
     .project-location,
-    .project-date {
+    .project-date,
+    .project-image-credit {
         font-size: 1.3em;
         line-height: 1.6;
+    }
+
+    .image-credit-link {
+        font-size: inherit;
     }
 
     .project-description {
