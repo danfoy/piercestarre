@@ -1,4 +1,5 @@
 vagrant/
+Resources/
 .DS_Store
 node_modules/
 dist/
