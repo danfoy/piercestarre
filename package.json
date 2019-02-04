@@ -28,7 +28,8 @@
     "gulp-noop": "^1.0.0",
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^3.2.1"
+    "gulp-sass": "^3.2.1",
+    "gulp-sourcemaps": "^2.6.4"
   },
   "dependencies": {
     "readable-stream": "^2.3.6",

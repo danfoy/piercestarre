@@ -8,6 +8,7 @@ const
     newer = require('gulp-newer'),
     rename = require('gulp-rename'),
     sass = require('gulp-sass'),
+    sourcemaps = require('gulp-sourcemaps'),
     postcss = require('gulp-postcss'),
     concat = require('gulp-concat'),
     clean = require('gulp-clean')
@@ -122,8 +123,10 @@ gulp.task('screenshot', () => {
 // CSS processing
 gulp.task('css', () => {
     return gulp.src(css.src)
+    .pipe(sourcemaps.init())
     .pipe(sass(css.sassOpts))
     .pipe(postcss(css.processors))
+    .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(css.build))
     .pipe(browsersync
         ? browsersync.reload({ stream: true })
