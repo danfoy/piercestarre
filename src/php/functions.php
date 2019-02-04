@@ -204,7 +204,7 @@ function ps2017_has_gallery(){
 
 /**
  * Prints a custom gallery, overwriting [gallery] shortcode
- * 
+ *
  * @return null
  */
 function ps2017_sidescroll_gallery() {
@@ -228,7 +228,7 @@ function ps2017_sidescroll_gallery() {
 
         // Loop through array -> figure elements
         while ($i < count($imageIds)) {
-            echo '<figure class="gallery-sidescroll-element">';
+            echo '<figure class="gallery-sidescroll-element" id="gallery-item-' . ( $i + 1 ) . '">';
             echo wp_get_attachment_image( $imageIds[$i], $size = 'medium', $icon = false, $attr = '' );
             echo '</figure>'; // .gallery-sidescroll-element
             $i++;
