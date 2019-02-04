@@ -4,24 +4,24 @@
 	margin-bottom: 5em; 	// to match project header (2.5em x 2em)
 	overflow-x: auto;		// force scroll bars
 
-	figure {
+	&-element {
+		box-sizing: border-box;
+		max-width: 100vw;
 		flex-wrap: nowrap;		// force single row of images
-		margin: 0 3em 2em 0;	// required to remove -webkit-margin-before
+		margin: 3em 5em;	// required to remove -webkit-margin-before
+
+		&:first-child {
+		}
 	}
 
 	// Set offset on both sides to line up with content
 	// (50vw = centre, - half of 600px standard image size)
-	figure:first-of-type {
-		padding-left: calc(50vw - 300px);
-	}
-	figure:last-of-type {
-		padding-right: calc(50vw - 300px);
-	}
-	
+	// padding-left: calc(50vw - 300px);
+	// padding-right: calc(50vw - 300px);
+
 	// remove global styles
 	img {
-		max-width: none;
-		max-height: none;
 		box-shadow: none;
+		max-width: none;
 	}
 }
