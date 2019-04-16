@@ -17,11 +17,11 @@ get_header(); ?>
                     echo '<p>' . $strapline . '</p>';
                 } ?>
             </div>
-            
+
             <div class="image">
                 <?php the_post_thumbnail('large'); ?>
             </div>
-            
+
         <?php
         endwhile;
     endif; ?>
@@ -45,6 +45,7 @@ get_header(); ?>
             ps2017_generate_cv_block('live-performance', 'Live Performance');
             ps2017_generate_cv_block('exhibitions', 'Exhibitions');
             ps2017_generate_cv_block('residencies', 'Residencies');
+            ps2017_generate_cv_block('awards-funding', 'Awards and Funding');
             ps2017_generate_cv_block('publications-media', 'Publications and Media');
 
             ?>
