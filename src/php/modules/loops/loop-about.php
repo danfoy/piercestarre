@@ -18,7 +18,7 @@ $linkmeta 		= get_post_meta( get_the_ID(), 'link', true);
 
         if ( $locationmeta ) {
             echo '</span>';
-            echo '<i class="location">' . $locationmeta . "</i>";
+            echo '<i class="cv-item-description-location">' . $locationmeta . "</i>";
         };
 
         echo ', <span class="cv-item-date">' . get_the_date('Y') . '</span>';
