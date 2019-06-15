@@ -41,11 +41,13 @@ get_header(); ?>
              * but ultimately decided to move to Gutenberg instead.
              */
             ps2017_generate_cv_block('education', 'Education');
-            ps2017_generate_cv_block('talks', 'Talks');
+            ps2017_generate_cv_block('talks-panels', 'Talks and Panels');
             ps2017_generate_cv_block('live-performance', 'Live Performance');
             ps2017_generate_cv_block('exhibitions', 'Exhibitions');
             ps2017_generate_cv_block('residencies', 'Residencies');
             ps2017_generate_cv_block('awards-funding', 'Awards and Funding');
+            ps2017_generate_cv_block('training-workshops', 'Training and Workshops');
+            ps2017_generate_cv_block('curatorial-programming', 'Curatorial and Programming');
             ps2017_generate_cv_block('publications-media', 'Publications and Media');
 
             ?>
