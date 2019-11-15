@@ -150,7 +150,6 @@ function ps2017_generate_cv_block(string $slug, string $title) {
     $query_{$slug} = new WP_Query(
         array(
             'category_name' => $slug,
-            'posts_per_page' => 10
         )
     );
 
