@@ -1,6 +1,8 @@
 <?php
 $locationmeta 	= get_post_meta( get_the_ID(), 'location', true);
 $linkmeta 		= get_post_meta( get_the_ID(), 'link', true);
+$permalink      = get_the_permalink( get_the_ID() );
+$content        = get_the_content();
 ?>
 
 <li class="cv-item">
@@ -8,8 +10,9 @@ $linkmeta 		= get_post_meta( get_the_ID(), 'link', true);
 
     echo '<span class="cv-item-title">';
 
-        if ($linkmeta) {
-        	echo '<a href="' . $linkmeta . '" target="_blank">' . get_the_title() . '</a>';
+        if ($content || $linkmeta) {
+            $thelink = $content ? $permalink : $linkmeta;
+        	echo '<a href="' . $thelink . '" target="_blank">' . get_the_title() . '</a>';
         } else {
         	the_title();
     	}
@@ -17,8 +20,8 @@ $linkmeta 		= get_post_meta( get_the_ID(), 'link', true);
     echo '<span class="cv-item-description">';
 
         if ( $locationmeta ) {
-            echo '</span>';
             echo '<i class="cv-item-description-location">' . $locationmeta . "</i>";
+            echo '</span>';
         };
 
         echo ', <span class="cv-item-date">' . get_the_date('Y') . '</span>';
