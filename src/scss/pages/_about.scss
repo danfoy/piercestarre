@@ -64,7 +64,6 @@
     .cv {
         padding-top: 5em;
         border-top: 0.15em solid white;
-        border-bottom: 0.15em solid white;
         margin-top: 5em;
         margin-bottom: 3em;
 
@@ -102,23 +101,6 @@
             font-style: normal;
         }
 
-    }
-
-    .download {
-        text-transform: uppercase;
-        font-size: 1.7em;
-        margin-top: 3em;
-        margin-bottom: 3em;
-
-        a,
-        a:link,
-        a:visited {
-            text-decoration: none;
-            font-weight: bold;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
     }
 
 }

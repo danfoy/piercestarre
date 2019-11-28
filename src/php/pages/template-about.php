@@ -55,10 +55,6 @@ get_header(); ?>
 
         </div>
 
-        <div class="download">
-            <a href="https://piercestarre.com/pierce_starre_cv.pdf" target="_blank">Click here to download CV</a>
-        </div>
-
 </main>
 
 <?php get_footer();
