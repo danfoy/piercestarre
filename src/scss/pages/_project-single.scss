@@ -1,26 +1,26 @@
-.single-work {
+.single {
 
     .main {
         width: inherit; // Override global width setting
     }
 
-    .project-title,
-    .project-date,
-    .project-location,
-    .project-description p {
+    .title,
+    .date,
+    .location,
+    .content p {
         width: 930px;
         margin-left: auto;
         margin-right: auto;
     }
 
-    .project-title {
+    .title {
         font-style: italic;
         margin: 2.5em auto;
     }
 
-    .project-location,
-    .project-date,
-    .project-image-credit {
+    .location,
+    .date,
+    .image-credit {
         font-size: 1.3em;
         line-height: 1.6;
     }
@@ -29,25 +29,31 @@
         font-size: inherit;
     }
 
-    .project-description {
+    .content {
         margin-bottom: 5em;
         margin-top: 5em;
+    }
+
+    &-post {
+        .content {
+            text-align: left;
+        }
     }
 
 }
 
 @media screen and (max-width: 950px) {
-    .project-title,
-    .project-date,
-    .project-location,
-    .project-description p {
+    .title,
+    .date,
+    .location,
+    .content p {
         max-width: 100%;
         width: inherit;
         margin-left: 1em;
         margin-right: 1em;
         box-sizing: border-box;
     }
-    .project-description {
+    .content {
         text-align: left;
     }
 }

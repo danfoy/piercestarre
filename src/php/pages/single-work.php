@@ -30,7 +30,7 @@ if (have_posts()) {
         };
 
         // Print post title
-        echo '<h1 class="project-title">' . get_the_title() . '</h1>';
+        echo '<h1 class="title">' . get_the_title() . '</h1>';
 
         // Insert the sidescroll gallery if there is one
         if (ps2017_has_gallery()) {
@@ -38,17 +38,17 @@ if (have_posts()) {
         };
 
         // Print project date, which is set to the post date
-        echo '<div class="project-date">'. get_the_time('j F Y') . '</div>';
+        echo '<div class="date">'. get_the_time('j F Y') . '</div>';
 
         // Print the project location from custom post meta, if exists
         if ( $meta_location ) {
-            echo '<div class="project-location">' . $meta_location . '</div>';
+            echo '<div class="location">' . $meta_location . '</div>';
         };
 
         // Print credit for the project photo if exists, optionally inside a link
         if ( $meta_image_credit_name ) {
-            echo '<div class="project-image-credit">';
-            echo '<span class="project-image-credit-title">Image: </span>';
+            echo '<div class="image-credit">';
+            echo '<span class="image-credit-title">Image: </span>';
 
             // Create a link if there is one, else wrap in a <span>
             if ($meta_image_credit_link) {
@@ -56,9 +56,9 @@ if (have_posts()) {
                 if (strpos($meta_image_credit_link, 'http') === false) {
                     $meta_image_credit_link = 'http://' . $meta_image_credit_link;
                 };
-                echo '<a href="' . $meta_image_credit_link . '" class="project-image-credit-link" target="_blank">';
+                echo '<a href="' . $meta_image_credit_link . '" class="image-credit-link" target="_blank">';
             } else {
-                echo '<span class="project-image-credit-name">';
+                echo '<span class="image-credit-name">';
             };
 
             // Print the the name we're crediting
@@ -66,17 +66,17 @@ if (have_posts()) {
 
             // Close either the link or the <span>
             if ($meta_image_credit_link) {
-                echo '</a>'; // .project-image-credit-link
+                echo '</a>'; // .image-credit-link
             } else {
-                echo '</span>'; // .project-image-credit-name
+                echo '</span>'; // .image-credit-name
             };
 
-            echo '</div>'; // .project-image-credit
+            echo '</div>'; // .image-credit
         };
 
 
         // Set up post content/description area
-        echo '<div class="project-description">';
+        echo '<div class="content">';
         // Print post content, now stripped of images
         echo wpautop( $content );
         echo '</div>';

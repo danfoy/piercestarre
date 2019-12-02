@@ -11,7 +11,12 @@ $content        = get_the_content();
     echo '<span class="cv-item-title">';
 
         if ($content || $linkmeta) {
-            $thelink = $content ? $permalink : $linkmeta;
+            if ($linkmeta) {
+                $thelink = $linkmeta;
+            }
+            else {
+                $thelink = $permalink;
+            }
         	echo '<a href="' . $thelink . '" target="_blank">' . get_the_title() . '</a>';
         } else {
         	the_title();

@@ -8,21 +8,22 @@ if (have_posts()) :
         the_post();
         ?>
 
-    <h1>
-        <a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-            <?php the_title(); ?>
-        </a>
+    <h1 class="title">
+        <?php the_title(); ?>
     </h1>
 
-    <span class="date"><?php the_time('j F Y'); ?></span>
+    <div class="content">
+        <?php the_content(); ?>
+    </div>
+
+    <p class="date"><?php the_time('j F Y'); ?></p>
 
     <?php
-    the_content();
-
     endwhile;
-    else : ?>
+    else :
+    ?>
 
-    <h1>Sorry, nothing to display.</h1>
+    <h1 class="title">Sorry, nothing to display.</h1>
 
 <?php
 endif;
