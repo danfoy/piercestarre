@@ -8,15 +8,9 @@ if (have_posts()) :
         the_post();
         ?>
 
-    <h1 class="title">
-        <?php the_title(); ?>
-    </h1>
-
     <div class="content">
         <?php the_content(); ?>
     </div>
-
-    <p class="date"><?php the_time('j F Y'); ?></p>
 
     <?php
     endwhile;
