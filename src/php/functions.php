@@ -53,7 +53,7 @@ function enqueue_ps2017_scripts()
         1,
         true
     );
-        wp_register_script(
+    wp_register_script(
         'horizontal_gallery',
         get_template_directory_uri() . '/js/horizontalgallery.js',
         array(),
