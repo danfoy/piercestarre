@@ -11,13 +11,11 @@
 @import 'vendor/normalize';
 @import 'vendor/wordpress';
 @import 'vendor/socialicons';
+@import 'vendor/flickity';
 
 @import 'global/structure';
 @import 'global/typography';
 @import 'global/images';
-
-@import 'modules/header';
-@import 'modules/footer';
 
 @import 'pages/homepage';
 @import 'pages/about';
@@ -25,4 +23,6 @@
 @import 'pages/project-archive';
 @import 'pages/project-single';
 
+@import 'modules/header';
+@import 'modules/footer';
 @import 'modules/gallery-sidescroll';

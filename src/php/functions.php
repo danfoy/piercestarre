@@ -53,6 +53,13 @@ function enqueue_ps2017_scripts()
         1,
         true
     );
+       wp_register_script(
+        'flickity',
+        get_template_directory_uri() . '/js/flickity.pkgd.js',
+        array(),
+        1,
+        true
+    );
     wp_register_script(
         'horizontal_gallery',
         get_template_directory_uri() . '/js/horizontalgallery.js',
@@ -61,7 +68,8 @@ function enqueue_ps2017_scripts()
         true
     );
     wp_enqueue_script('animate_menu');
-    wp_enqueue_script( 'horizontal_gallery');
+    wp_enqueue_script('flickity');
+    wp_enqueue_script('horizontal_gallery');
 }
 
 

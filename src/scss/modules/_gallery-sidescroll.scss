@@ -1,27 +1,12 @@
 .gallery-sidescroll {
 
-	display: flex;			// to allow nowrap property
-	margin-bottom: 5em; 	// to match project header (2.5em x 2em)
-	overflow-x: auto;		// force scroll bars
+    img {
+        max-width: 100vw;           // Percentage values cause overlap
+        box-shadow: none;           // Cut off by enclosing Flickity div
+    }
 
-	&-element {
-		box-sizing: border-box;
-		max-width: 100vw;
-		flex-wrap: nowrap;		// force single row of images
-		margin: 3em 5em;	// required to remove -webkit-margin-before
+    &-element {
+        font-size: 0;               // Remove hidden line breaks inside Figures
+    }
 
-		&:first-child {
-		}
-	}
-
-	// Set offset on both sides to line up with content
-	// (50vw = centre, - half of 600px standard image size)
-	// padding-left: calc(50vw - 300px);
-	// padding-right: calc(50vw - 300px);
-
-	// remove global styles
-	img {
-		box-shadow: none;
-		max-width: none;
-	}
 }

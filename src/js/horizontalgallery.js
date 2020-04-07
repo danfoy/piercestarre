@@ -23,25 +23,29 @@
 
 
 // Find the gallery
-const gallery = {
-    container: document.querySelector('.gallery-sidescroll'),
-    item: document.querySelectorAll('.gallery-sidescroll-element')
-}
+// const gallery = {
+//     container: document.querySelector('.gallery-sidescroll'),
+//     item: document.querySelectorAll('.gallery-sidescroll-element')
+// }
 
-function getGalleryItemWidth(index) {
-    gallery.item[index].getBoundingClientRect().width
-}
+// function getGalleryItemWidth(index) {
+//     gallery.item[index].getBoundingClientRect().width
+// }
 
-let galleryWidth = gallery.container.getBoundingClientRect().width;
-let firstItemWidth = gallery.item[0].getBoundingClientRect().width;
-// let lastItemWidth = gallery.item[gallery.item.length].getBoundingClientRect().width;
+// let galleryWidth = gallery.container.getBoundingClientRect().width;
+// let firstItemWidth = gallery.item[0].getBoundingClientRect().width;
+// // let lastItemWidth = gallery.item[gallery.item.length].getBoundingClientRect().width;
+// console.log("Gallery width: " + galleryWidth);
+// console.log("First item width: " + firstItemWidth);
+// console.log("Items in list: " + gallery.item.length);
 
-console.log("Gallery width: " + galleryWidth);
-console.log("First item width: " + firstItemWidth);
-console.log("Items in list: " + gallery.item.length);
+// let firstPadding = ((galleryWidth / 2 ) - (firstItemWidth / 2 ) );
+// gallery.item[0].style.marginLeft = firstPadding + "px";
 
-let firstPadding = ((galleryWidth / 2 ) - (firstItemWidth / 2 ) );
-gallery.item[0].style.marginLeft = firstPadding + "px";
+var carouselElement = document.querySelector('.gallery-sidescroll');
 
-
+var sidescrollGallery = new Flickity(carouselElement, {
+    cellSelector: '.gallery-sidescroll-element',
+    pageDots: false
+});
 
