@@ -1,5 +1,7 @@
 .gallery-sidescroll {
 
+    margin-bottom: 2.5em;           // Match heading margin for portfolios
+
     img {
         max-width: 100vw;           // Percentage values cause overlap
         box-shadow: none;           // Cut off by enclosing Flickity div
